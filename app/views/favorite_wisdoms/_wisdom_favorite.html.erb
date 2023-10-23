@@ -1,0 +1,3 @@
+<%= link_to favorite_wisdoms_path(wisdom_board_id: wisdom_board.id), id: "favorite-button-for-wisdom-#{wisdom_board.id}", data: { turbo_method: :post } do %>
+  <div><%= image_tag 'unfavorite.svg' %></div>
+<% end %>

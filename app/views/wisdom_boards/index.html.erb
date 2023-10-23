@@ -1,0 +1,33 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <%= link_to '投稿ボタン', new_wisdom_board_path, class: 'btn btn-success mt-3' %>
+  <div class="search-form">
+    <%= render 'search_form' %>
+  </div>
+
+  <div class="boarder mt-3">
+    <% @wisdom_boards.each do |wisdom_board| %>
+      <div class="flex-container">
+        <% if logged_in? %>
+          <% if current_user.wisdom_board_favorite?(wisdom_board) %>
+            <%= render 'favorite_wisdoms/wisdom_unfavorite', {wisdom_board: wisdom_board} %>
+          <% else %>
+            <%= render 'favorite_wisdoms/wisdom_favorite', {wisdom_board: wisdom_board} %>
+          <% end %>
+        <% end %>
+        <h3 class="ml-3"><%= link_to wisdom_board.title, wisdom_board_path(wisdom_board), class: 'header-link' %></h3>
+        <%= render 'destroy', wisdom_board: wisdom_board %>
+      </div>
+      <% wisdom_board.wisdom_tags.each do |tag| %>
+        <div class="btn btn-success mb-3 mt-3"><%= tag.name %></div>
+      <% end %>
+      <div class="wisdom_information">
+        <%= link_to wisdom_board_path(wisdom_board) do %>
+          <%= image_tag wisdom_board.photo_url %>
+        <% end %>
+      </div>
+      <div class="bottom-boarder mt-3"></div>
+    <% end %>
+  </div>
+</div>
+<%= paginate @wisdom_boards, theme: 'bootstrap-5' %>

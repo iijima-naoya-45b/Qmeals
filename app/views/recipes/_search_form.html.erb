@@ -1,0 +1,25 @@
+<%= form_with url: recipes_path, method: :get, data: { turbo_frame: "recipes-frame", controller: "form", action: "input->form#submit" } do |f| %>
+  <div class="form-field">
+    <div class="form-group">
+      <%= f.label :title, 'レシピ名' %>
+      <%= f.text_field :title, list: "titles", class:'form-control', placeholder: 'レシピ名で検索してください' %>
+      <datalist id="titles">
+        <% Recipe.limit(10).each do |recipe| %>
+          <option value="<%= recipe.title %>">
+        <% end %>
+      </datalist>
+    </div>
+    <div class="form-group">
+      <%= f.label :tag, 'タグ名' %>
+      <%= f.text_field :tag, list: "tags",  class:'form-control', placeholder: 'タグ名で検索してください' %>
+      <datalist id="tags">
+        <% RecipeTag.limit(10).each do |tag| %>
+          <option value="<%= tag.name %>">
+        <% end %>
+      </datalist>
+    </div>
+    <div class="form-submit mt-4">
+      <%= f.submit :search, class: 'btn btn-success' %>
+    </div>
+  </div>
+<% end %>

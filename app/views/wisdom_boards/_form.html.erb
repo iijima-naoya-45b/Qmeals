@@ -1,0 +1,35 @@
+<div class="container">
+  <%= link_to '一覧に戻る', wisdom_boards_path, class: 'btn btn-success' %>
+
+  <%= form_with model: @wisdom_form, url: wisdom_boards_path(@wisdom_board), class: 'my-form' do |f| %>
+    <div class="form-group">
+      <%= f.label :title, 'タイトル' %><span class="text-danger">（必須）</span>
+      <%= f.text_field :title, class: 'form-control', placeholder: 'タイトルを入力してください' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :content, '本文' %><span class="text-danger">（必須）</span>
+      <%= f.text_area :content, class: 'form-control', placeholder: '本文を入力してください' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :tag_name, 'タグ' %><span class="text-danger">（必須）</span>
+      <%= f.text_field :tag_name, class: 'form-control', placeholder: 'カンマ区切りで入力してください' %>
+    </div>
+    <div class="form-group">
+      <%= f.label :photo, '写真' %><span class="text-danger">（必須）</span>
+      <%= f.file_field :photo, class: 'form-control' %>
+    </div>
+    
+    <% (1..6).each do |index| %>
+      <div class="form-group mt-5">
+        <%= f.label "image", "知恵袋の写真#{index}" %>
+        <%= f.file_field "wisdom_attributes[#{index - 1}][image]", class: 'form-control' %>
+      </div>
+      <div class="form-group">
+        <%= f.label "description", "知恵袋の説明#{index}" %>
+        <%= f.text_area "wisdom_attributes[#{index - 1}][description]", class: 'form-control', placeholder: "説明文#{index}を入力してください" %>
+      </div>
+    <% end %>
+
+    <%= f.submit '投稿する', class: 'btn btn-success' %>
+  <% end %>
+</div>

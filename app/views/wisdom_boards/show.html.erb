@@ -1,0 +1,49 @@
+<div class="container">
+  <div class="flex-container">
+  
+    <% if logged_in? %>
+      <% if current_user.wisdom_board_favorite?(@wisdom_board) %>
+        <%= render 'favorite_wisdoms/wisdom_unfavorite', wisdom_board: @wisdom_board %>
+      <% else %>
+        <%= render 'favorite_wisdoms/wisdom_favorite', wisdom_board: @wisdom_board %>
+      <% end %>
+    <% end %>
+
+    <h3 class="wisdom_board mt-3"><%= "タイトル：#{@wisdom_board.title}" %></h3>
+  </div>
+
+  <div class='mt-2'></div>
+
+  <%= render 'destroy', wisdom_board: @wisdom_board %>
+  
+  <div class="wisdom-main">
+    <div class="btn-group" role="group" aria-label="Recipe Tags">
+      <% @wisdom_board.wisdom_tags.each do |wisdom_tag| %>
+        <div class="btn-wrapper">
+          <div class="btn btn-success mb-3"><%= wisdom_tag.name %></div>
+        </div>
+      <% end %>
+    </div>
+    <%= image_tag @wisdom_board.photo_url %>
+    <div class="break-all mt-2 mb-2">
+      <%= @wisdom_board.content %>
+    </div>
+  </div>
+
+  <div class="wisdom-main">
+    <% @wisdom_board.wisdom_photos.each_with_index do |photo, index| %>
+        <h3><%= "知恵袋の説明#{index + 1}" %></h3>
+        <%= image_tag photo.image_url %>
+        <div class="break-all mt-2 mb-2">
+          <p><%= photo.description %></p>
+        </div>
+    <% end %>
+  </div>
+
+  <%= render 'wisdom_comments/form', wisdom_comment: @comment, wisdom_board: @wisdom_board %>
+  <p class="wisdom_board-author"><%= "投稿者:#{@wisdom_board.user.name}さん" %></p>
+  <div id="table-wisdom-comment">
+    <%= render @comments %>
+  </div>
+</div>
+<%= link_to '一覧に戻る', wisdom_boards_path, class: 'Outer-Flex-Text mb-3' %>

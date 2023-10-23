@@ -1,0 +1,30 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-10 col-lg-8 mx-auto">
+      <h1><%= t('user_sessions.new.registration') %></h1>
+      <%= form_with model: @user do |f| %>
+        <%= render 'shared/error_messages', object: f.object %>
+        <div class="mb-3">
+          <%= f.label :name, class: "form-label" %>
+          <%= f.text_field :name, class: "form-control", placeholder: "お名前を入力してください" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :email, class: "form-label" %>
+          <%= f.email_field :email, class: "form-control", placeholder: "メールアドレスを入力してください" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :password, class: "form-label" %>
+          <%= f.password_field :password, class: "form-control", placeholder: "パスワードを入力してください" %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :password_confirmation, class: "form-label" %>
+          <%= f.password_field :password_confirmation, class: "form-control", placeholder: "再度パスワードを入力してください" %>
+        </div>
+        <%= f.submit "登録", class: "btn btn-success" %>
+      <% end %>
+      <div class="text-center">
+        <%= link_to 'ログインページへ', login_path, class:'btn btn-success mb-3' %>
+      </div>
+    </div>
+  </div>
+</div>

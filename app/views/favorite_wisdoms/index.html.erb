@@ -1,0 +1,23 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <%= render 'shared/favorites' %>
+  <div class="bottom-boarder"></div>
+  <% @favorite_wisdoms.each do |wisdom_board| %>
+    <div class="favorite-wisdom-board">
+      <div style="display: flex; align-items: center;">
+        <%= render 'wisdom_unfavorite', {wisdom_board: wisdom_board} %>
+        <h3 class="ml-3"><%= link_to wisdom_board.title, wisdom_board_path(wisdom_board), class: 'header-link' %></h3>
+      </div>
+      <% wisdom_board.wisdom_tags.each do |tag| %>
+        <span class="btn btn-success"><%= tag.name %></span>
+      <% end %>
+      <p class="mt-3">
+        <%= link_to wisdom_board_path(wisdom_board) do %>
+          <div class="image-box"><%= image_tag wisdom_board.photo_url %></div>
+        <% end %>
+      </p>
+      <div class="bottom-boarder"></div>
+    </div>
+  <% end %>
+  </div>
+</div>

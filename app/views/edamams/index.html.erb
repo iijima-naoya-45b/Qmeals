@@ -1,0 +1,26 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <h1>海外のレシピ検索</h1>
+  <%= form_with(url: edamams_path, method: :get, class: "search-form") do |f| %>
+    <%= f.text_field :search, placeholder: "英語名で検索してください" %>
+    <%= f.submit '検索する', class: "btn btn-success" %>
+  <% end %>
+</div>
+
+<% if @foods.present? && @foods["hits"].present? %>
+  <div class="recipe-container">
+    <% @foods["hits"].first(12).each_slice(3) do |recipes| %>
+      <div class="row">
+        <% recipes.each do |recipe| %>
+          <div class="col-md-4 recipe-item">
+            <div class="recipe-details">
+              <%= link_to recipe["recipe"]["label"], recipe["recipe"]["url"], class: "recipe-title" %>
+              <p><%= number_with_precision(recipe["recipe"]["calories"], precision: 2) %>cal</p>
+            </div>
+            <%= image_tag recipe["recipe"]["image"], class: "recipe-image" %>
+          </div>
+        <% end %>
+      </div>
+    <% end %>
+  </div>
+<% end %>

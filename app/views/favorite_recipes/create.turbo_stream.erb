@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "favorite-button-for-recipe-#{@recipe.id}" do %>
+  <%= render 'favorite_recipes/recipe_unfavorite', recipe: @recipe %>
+<% end %>

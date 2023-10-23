@@ -1,0 +1,49 @@
+ja:
+  activerecord:
+      models:
+        user: ユーザー
+        shopping_list: お買い物リスト
+      attributes:
+        user:
+          email: メールアドレス
+          name: 名前
+          password: パスワード
+          password_confirmation: パスワード確認
+          avatar: 写真
+        shopping_list:
+          item: 商品
+          notes: 備考
+        contact:
+          name: 名前
+          email: メールアドレス
+          message: お問い合わせ内容
+        recipe_comment:
+          body: コメント
+      errors:
+        models:
+          shopping_list:
+            attributes:
+              item:
+                blank: "入力してください"
+          user:
+            attributes:
+              name:
+                blank: "入力してください"
+                too_short: "%{count}文字以上で入力してください"
+              email:
+                blank: "入力してください"
+                invalid: "このメールアドレスは使用できません"
+                taken: "このメールアドレスは使用できません"
+              password:
+                too_short: "%{count}文字以上で入力してください"
+              password_confirmation:
+                blank: "入力してください"
+                confirmation: "パスワードとパスワード確認が違います"
+          recipe_comment:
+            attributes:
+              body:
+                blank: "入力してください"
+          wisdom_comment:
+            attributes:
+              comment:
+                blank: "入力してください"

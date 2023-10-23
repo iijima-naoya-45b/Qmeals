@@ -1,0 +1,57 @@
+ja:
+  helpers:
+    submit:
+      create: 登録
+      submit: 保存
+      update: 更新
+    label:
+      email: メールアドレス
+      password: パスワード
+  defaults:
+    flash_message:
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成出来ませんでした"
+  user_sessions:
+    new:
+      title: ログイン
+      login: ログイン
+      registration: 新規登録
+      to_register_page: 登録ページへ
+      to_password_reset: パスワードをお忘れの方はこちら
+  users:
+    new:
+      title: ユーザー登録
+      to_login_page: ログインページへ
+  shop_lists:
+    index:
+      title: お買い物リスト
+    new:
+      item: タイトル
+      notes: 備考
+    headers:
+      item: "商品"
+      notes: "備考"
+  recipes:
+    index:
+      title: レシピ一覧
+  wisdom_boards:
+    index:
+      title: 料理の知恵一覧
+  edamams:
+    index:
+      title: 海外のレシピサイト
+  privacies:
+    index: 
+      title: プライバシーポリシー 
+  wisdom_boards:
+    index:
+      title: タイトル
+  favorite_recipes:
+    index:
+      title: 料理のお気に入りスト
+  favorite_wisdoms:
+    index:
+      title: 料理の知恵のお気に入りリスト
+  terms_of_services:
+    index: 
+      title: 利用規約

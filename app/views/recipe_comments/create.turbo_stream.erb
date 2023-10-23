@@ -1,0 +1,12 @@
+<% if @comment.errors.present? %>
+  <%= turbo_stream.replace "recipe-comment-form" do %>
+    <%= render 'recipe_comments/form', recipe_comment: @comment, recipe: @comment.recipe %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.prepend "table-recipe-comment" do %>
+    <%= render 'recipe_comments/recipe_comment', recipe_comment: @comment %>
+  <% end %>
+  <%= turbo_stream.replace "recipe-comment-form" do %>
+    <%= render 'recipe_comments/form', recipe_comment: RecipeComment.new, recipe: @comment.recipe %>
+  <% end %>
+<% end %>

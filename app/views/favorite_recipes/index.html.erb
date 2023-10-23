@@ -1,0 +1,22 @@
+<% content_for(:title, t('.title')) %>
+<div class="container">
+  <%= render 'shared/favorites' %>
+  <div class="bottom-boarder"></div>
+  <% @favorite_recipes.each do |recipe| %>
+    <div class="favorite-recipe">
+      <div style="display: flex; align-items: center;">
+        <%= render 'recipe_unfavorite', {recipe: recipe} %>
+        <h3 style="margin-left: 10px;"><%= link_to recipe.title, recipe_path(recipe), class: 'header-link' %></h3>
+      </div>
+      <% recipe.recipe_tags.each do |tag| %>
+        <span class="btn btn-success"><%= tag.name %></span>
+      <% end %>
+      <p style="margin-top: 10px;">
+          <%= link_to recipe_path(recipe) do %>
+          <%= image_tag recipe.photo_url %>
+          <% end %>
+      </p>
+      <div class="bottom-boarder"></div>
+    </div>
+  <% end %>
+</div>

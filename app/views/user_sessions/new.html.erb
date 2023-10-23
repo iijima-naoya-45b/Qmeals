@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class=" col-md-10 col-lg-8 mx-auto">
+      <h1><%= t('user_sessions.new.title') %></h1>
+      <%= form_with model: @user do |f| %>
+        <div class="mb-3">
+          <%= f.label :email %>
+          <%= f.email_field :email, class: "form-control", placeholder: 'メールアドレスを入力してください' %>
+        </div>
+        <div class="mb-3">
+          <%= f.label :password %>
+          <%= f.password_field :password, class: "form-control", placeholder: 'パスワードをいれてください' %>
+        </div>
+        <%= f.submit 'ログイン', class: "btn btn-success" %>
+      <% end %>
+      <div class='text-center'>
+        <%= link_to t('user_sessions.new.to_register_page'), new_user_path, class: 'btn btn-success' %>
+        <%= link_to t('user_sessions.new.to_password_reset'), new_password_reset_path, class: 'btn btn-success' %>
+      </div>
+    </div>
+  </div>
+</div>

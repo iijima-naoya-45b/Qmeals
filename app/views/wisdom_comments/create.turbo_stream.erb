@@ -1,0 +1,12 @@
+<% if @comment.errors.present? %>
+  <%= turbo_stream.replace "wisdom-comment-form" do %>
+    <%= render 'wisdom_comments/form', wisdom_comment: @comment, wisdom_board: @comment.wisdom_board %>
+  <% end %>
+<% else %>
+  <%= turbo_stream.prepend "table-wisdom-comment" do %>
+    <%= render 'wisdom_comments/wisdom_comment', wisdom_comment: @comment %>
+  <% end %>
+  <%= turbo_stream.replace "wisdom-comment-form" do %>
+    <%= render 'wisdom_comments/form', wisdom_comment: WisdomComment.new, wisdom_board: @comment.wisdom_board %>
+  <% end %>
+<% end %>

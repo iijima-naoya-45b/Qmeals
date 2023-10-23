@@ -1,0 +1,3 @@
+<%= turbo_stream.replace "favorite-button-for-wisdom-#{@wisdom_board.id}" do %>
+  <%= render 'favorite_wisdoms/wisdom_unfavorite', wisdom_board: @wisdom_board %>
+<% end %>

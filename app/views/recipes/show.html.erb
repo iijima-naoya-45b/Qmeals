@@ -1,0 +1,59 @@
+<div class="container">
+  <div class="flex-container">
+    <% if logged_in? %>
+      <% if current_user.recipe_favorite?(@recipe) %>
+        <%= render 'favorite_recipes/recipe_unfavorite', {recipe: @recipe} %>
+      <% else %>
+        <%= render 'favorite_recipes/recipe_favorite', { recipe: @recipe } %>
+      <% end %>
+    <% end %>
+    <h3 class="recipe-title mt-3"><%= "タイトル：#{@recipe.title}" %></h3>
+  </div>
+
+  <div class='mt-2'></div>
+  <%= render 'destroy', recipe: @recipe %>
+  <h4 class='mt-2'>材料</h4>
+  <h4 class='mt-2'><%= "調理時間：#{@recipe.cooking_time}分" %></h4>
+  
+  <% @recipe.ingredients.each do |recipe_ingredient| %>
+    <table class="table table-spacing">
+      <tbody>
+        <tr>
+          <td style="width: 300px;"><%= recipe_ingredient.name %></td>
+          <td style="width: 300px;"><%= recipe_ingredient.unit.unit %></td>
+        </tr>
+      </tbody>
+    </table>
+  <% end %>
+
+  <div class="recipe-main">
+    <div class="btn-group" role="group" aria-label="Recipe Tags">
+    <% @recipe.recipe_tags.each do |recipe_tag| %>
+      <div class="btn-wrapper">
+        <div class="btn btn-success mb-3"><%= recipe_tag.name %></div>
+      </div>
+    <% end %>
+  </div>
+    <%= image_tag @recipe.photo_url %>
+    <div class="break-all mt-2 mb-2">
+      <%= @recipe.content %>
+    </div>
+  </div>
+
+  <div class="recipe-main">
+    <% @recipe.recipe_photos.each_with_index do |recipe_photo, index| %>
+      <h3><%= "レシピの説明#{index + 1}" %></h3>
+        <%= image_tag recipe_photo.image_url %>
+        <div class="break-all mt-2 mb-2">
+          <%= recipe_photo.description %>
+        </div>
+    <% end %>
+  </div>
+
+  <%= render 'recipe_comments/form', recipe_comment: @comment, recipe: @recipe %>
+  <p class="recipe-author"><%= "投稿者: #{@recipe.user.name}さん" %></p>
+  <div id="table-recipe-comment">
+    <%= render @comments %>
+  </div>
+</div>
+<%= link_to '一覧に戻る', recipes_path, class: 'Outer-Flex-Text mb-3' %>

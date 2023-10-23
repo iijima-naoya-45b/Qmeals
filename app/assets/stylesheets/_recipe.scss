@@ -1,0 +1,81 @@
+.recipe-main, .wisdom-main {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* 外側に影を追加 */
+  margin-bottom: 20px; /* 下部に余白を追加 */
+}
+
+.recipe-main-content, .wisdom-main-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin: 100px;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.2); /* 外側の影を追加 */
+}
+
+.recipe-main-content h3, .wisdom-main-content h3 {
+  text-align: center;
+}
+
+.recipe-main-content .flex {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.recipe-main-content .recipe-content {
+  margin-right: 20px;
+}
+
+.boarder {
+  border: 1px solid #ccc;
+  padding: 30px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  text-align: center; /* テキストを中央寄せにする */
+}
+
+.recipe-content img {
+  max-width: 100%; /* 画像が親要素に収まるようにする */
+  height: auto;
+  margin-bottom: 10px; /* 画像と説明文の間隔を設定 */
+}
+
+.recipe-description p {
+  margin: 0; /* パラグラフの上下の余白を削除 */
+}
+
+.flex-container{
+  display: flex;
+}
+
+.bottom-boarder {
+  border-bottom: 1px solid #ccc; /* 下部に1ピクセルのボーダーを追加 */
+  margin-bottom: 20px; /* 下部に余白を追加 */
+}
+
+
+
+.wisdom-main img {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* 影のスタイルを指定 */
+  margin-bottom: 10px; /* 画像間の余白を設定 */
+}
+
+.wisdom-description {
+  text-align: center; /* テキストを中央寄せにする */
+}
+
+.inline-block {
+  display: inline-block;
+}
+
+.btn-wrapper {
+  display: inline-block; /* ボタンを横に並べる */
+  margin-right: 10px; /* ボタン間の間隔を調整（必要に応じて変更） */
+}
