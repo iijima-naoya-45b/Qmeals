@@ -14,8 +14,6 @@ gem 'sprockets-rails'
 gem 'httpclient'
 
 gem 'pry'
-# Use the PostgreSQL database adapter
-gem 'pg'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
