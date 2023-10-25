@@ -17,7 +17,7 @@ test:
 production:
   <<: *default
   adapter: postgresql
-  encoding: utf8
+  encoding: unicode
   reconnect: false
   pool: 5
   charset: utf8
