@@ -23,3 +23,4 @@ RUN bundle install
 RUN yarn install
 
 COPY . /myapp
+
