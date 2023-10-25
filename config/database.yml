@@ -21,3 +21,5 @@ production:
   database: qmeals
   username: qmeals
   url: <%= ENV['DATABASE_URL'] %>
+
+  
