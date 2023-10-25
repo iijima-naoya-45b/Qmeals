@@ -52,4 +52,9 @@
     width: 500px; /* 幅を500pxに設定 */
     margin: 0 auto; /* 中央寄せにするためのマージン設定 */
     word-wrap: break-word; /* 長い単語やURLがはみ出た場合に改行 */
-  }  
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    }
