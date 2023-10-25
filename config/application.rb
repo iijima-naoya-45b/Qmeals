@@ -24,7 +24,6 @@ module Myapp
     # Initialize configuration defaults for originally generated Rails version.
     config.load_defaults 7.0
 
-    ruby_version = File.read('.ruby-version').strip
 
     # Configuration for the application, engines, and railties goes here.
     #
