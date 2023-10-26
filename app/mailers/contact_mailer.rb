@@ -4,6 +4,6 @@ class ContactMailer < ApplicationMailer
 
   def contact_mail(contact)
     @contact = contact
-    mail(subject: 'お問い合わせを承りました', to: @contact.email)
+    mail(subject: 'お問い合わせを承りました', from: @contact.email)
   end
 end
