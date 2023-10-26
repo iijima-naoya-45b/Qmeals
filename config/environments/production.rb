@@ -70,7 +70,7 @@ Rails.application.configure do
 config.action_mailer.smtp_settings = {
   address:              'smtp.gmail.com',
   port:                 587,
-  domain:               'https://qmeals-app.onrender.com',
+  domain:               'qmeals-app.onrender.com',
   user_name:            'qmeals',
   password:             'qmeals',
   authentication:       'plain',
