@@ -6,5 +6,4 @@ class WisdomBoard < ApplicationRecord
   has_many :wisdom_tags, through: :wisdom_type_of_tags
   has_many :wisdom_photos, dependent: :destroy
   has_many :wisdom_comments, dependent: :destroy
-  has_many :wisdom_ratings, dependent: :destroy
 end

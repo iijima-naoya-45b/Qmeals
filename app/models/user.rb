@@ -18,7 +18,6 @@ class User < ApplicationRecord
   has_many :recipe_ingredients, dependent: :destroy
 
   has_many :recipe_comments, dependent: :destroy
-  has_many :recipe_rating, dependent: :destroy
 
   has_many :wisdom_boards, dependent: :destroy
   has_many :favorite_wisdoms, dependent: :destroy
