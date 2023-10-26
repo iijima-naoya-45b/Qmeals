@@ -1,2 +1,3 @@
 default_url_options:
-  https://qmeals-app.onrender.com
+  host: "qmeals-app.onrender.com"
+  protocol: "https"
