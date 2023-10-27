@@ -1,9 +1,8 @@
 class RecipeForm
   include ActiveModel::Model
-  attr_accessor :title, :content, :cooking_time, :ingredient_name, :unit_unit, :photo, :tag_names, :ingredients_attributes,
+  attr_accessor :title, :content, :cooking_time, :ingredient_name, :unit_unit, :photo, :image, :tag_names, :ingredients_attributes,
                 :recipe_mains
-  attr_accessor :photo, :recipe_image
-  
+
   mount_uploader :photo, PhotoUploader
   mount_uploader :image, RecipeImageUploader
 
