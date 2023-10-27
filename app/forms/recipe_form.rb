@@ -22,32 +22,30 @@ class RecipeForm
 
   def save
     return false unless valid?
-
+  
     ActiveRecord::Base.transaction do
-      recipe = Recipe.create(title:, content:, cooking_time:, photo:, user_id: @user.id)
-      recipe.recipe_tags = tag_names.map { |name| RecipeTag.find_or_create_by(name:) }
-
+      recipe = Recipe.create(title: @title, content: @content, cooking_time: @cooking_time, photo: @photo, user_id: @user.id)
+      recipe.recipe_tags = tag_names.map { |name| RecipeTag.find_or_create_by(name: name) }
+  
       @ingredients_attributes.each do |_, ingredient_params|
-        @ingredient_name = ingredient_params['ingredient_name']
-        @unit_unit = ingredient_params['unit_unit']
-
-        next unless @ingredient_name.present? && @unit_unit.present?
-
-        ingredient = Ingredient.create(name: @ingredient_name)
-        unit = Unit.create(unit: @unit_unit, ingredient_id: ingredient.id)
+        ingredient_name = ingredient_params['ingredient_name']
+        unit_unit = ingredient_params['unit_unit']
+  
+        next unless ingredient_name.present? && unit_unit.present?
+  
+        ingredient = Ingredient.create(name: ingredient_name)
+        unit = Unit.create(unit: unit_unit, ingredient_id: ingredient.id)
         RecipeIngredient.create(recipe_id: recipe.id, ingredient_id: ingredient.id)
       end
-
+  
       @recipe_mains.each do |_, recipe_params|
         image = recipe_params['image']
         description = recipe_params['description']
 
-        if image.present? && description.present?
           RecipePhoto.create(recipe_id: recipe.id, image: image, description: description)
         end
       end
 
       true
     end
-  end
-end
+  end  
