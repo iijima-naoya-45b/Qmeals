@@ -295,6 +295,9 @@ GEM
       ast (~> 2.4.1)
       racc
     pg (1.3.5)
+    piet (0.2.6)
+      png_quantizator
+    png_quantizator (0.2.1)
     popper_js (2.11.8)
     pry (0.14.2)
       coderay (~> 1.1)
@@ -467,6 +470,7 @@ DEPENDENCIES
   oauth (= 1.1.0)
   oauth2 (= 2.0.9)
   pg (= 1.3.5)
+  piet
   pry
   puma (~> 5.0)
   rails (~> 7.0.8)
