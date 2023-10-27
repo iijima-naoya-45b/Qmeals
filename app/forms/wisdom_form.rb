@@ -8,6 +8,9 @@ class WisdomForm
   validates :tag_names, presence: true, length: { maximum: 140 }
   validates :photo, presence: true
 
+  mount_uploader :photo, WisdomPhotoUploader
+  mount_uploader :image, WisdomImageUploader
+
   def initialize(attributes = {}, user)
     super(attributes)
     @user = user
