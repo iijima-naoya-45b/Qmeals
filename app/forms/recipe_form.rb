@@ -39,11 +39,11 @@ class RecipeForm
       end
 
       @recipe_mains.each do |_, recipe_params|
-        @image = recipe_params['image']
-        @description = recipe_params['description']
+        image = recipe_params['image']
+        description = recipe_params['description']
 
-        if @image.present? && @description.present?
-          RecipePhoto.create(recipe_id: recipe.id, image: @image, description: @description)
+        if image.present? && description.present?
+          RecipePhoto.create(recipe_id: recipe.id, image: image, description: description)
         end
       end
 
