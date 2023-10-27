@@ -2,6 +2,7 @@ class WisdomForm
   include ActiveModel::Model
 
   attr_accessor :title, :content, :tag_names, :photo, :wisdom_attributes
+  attr_accessor :photo, :recipe_image
 
   validates :title, presence: true, length: { maximum: 140 }
   validates :content, presence: true, length: { maximum: 140 }
