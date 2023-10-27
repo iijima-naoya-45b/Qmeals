@@ -11,7 +11,7 @@ class WisdomPhotoUploader < CarrierWave::Uploader::Base
     'top_wisdom.svg'
   end
 
-  process resize_to_limit: [200, 200]
+  process resize_to_limit: [300, 300]
 
   def extension_allowlist
     %w[jpg jpeg gif png]

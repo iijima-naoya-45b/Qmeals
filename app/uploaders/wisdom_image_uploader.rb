@@ -11,7 +11,7 @@ class WisdomImageUploader < CarrierWave::Uploader::Base
     'top_wisdom.svg'
   end
 
-  process resize_to_fit: [800, 800]
+  process resize_to_fit: [200, 200]
   process :optimize
 
   def extension_allowlist

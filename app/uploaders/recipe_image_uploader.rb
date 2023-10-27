@@ -11,7 +11,7 @@ class RecipeImageUploader < CarrierWave::Uploader::Base
     'top_recipe.svg'
   end
 
-  process resize_to_fit: [800, 800]
+  process resize_to_fit: [200, 200]
   process :optimize
 
   def extension_allowlist

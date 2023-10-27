@@ -29,7 +29,7 @@ class WisdomForm
       @wisdom_attributes.each do |_, wisdom_board_params|
         image = wisdom_board_params['image']
         description = wisdom_board_params['description']
-        WisdomPhoto.create(wisdom_board_id: wisdom_board.id, image:, description:) if image.present? && description.present?
+        WisdomPhoto.create(wisdom_board_id: wisdom_board.id, image:, description:)
       end
     end
     true
