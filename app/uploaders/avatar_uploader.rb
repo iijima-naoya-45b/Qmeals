@@ -5,7 +5,11 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process resize_to_fill: [80, 80]
 
   # Choose what kind of storage to use for this uploader:
-  storage :fog
+  if Rails.env.development? || Rails.env.test? 
+    storage :file
+  else
+    storage :fog
+  end
   # storage :fog
 
   # Override the directory where uploaded files will be stored.
@@ -50,7 +54,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
 
   # Override the filename of the uploaded files:
   # Avoid using model.id or version_name here, see uploader/store.rb for details.
-  # def filename
-  #   "something.jpg" if original_filename
-  # end
+  def filename
+    original_filename if original_filename
+  end
 end
