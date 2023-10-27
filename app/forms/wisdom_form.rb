@@ -3,10 +3,9 @@ class WisdomForm
 
   attr_accessor :title, :content, :tag_names, :photo, :image, :wisdom_attributes
 
-  validates :title, presence: true, length: { maximum: 140 }
-  validates :content, presence: true, length: { maximum: 140 }
-  validates :tag_names, presence: true, length: { maximum: 140 }
-  validates :photo, presence: true
+  validates :title, presence: true, length: { maximum: 500 }
+  validates :content, presence: true, length: { maximum: 500 }
+  validates :tag_names, presence: true, length: { maximum: 500 }
 
   def initialize(attributes = {}, user)
     super(attributes)
@@ -22,10 +21,10 @@ class WisdomForm
     return false unless valid?
 
     ActiveRecord::Base.transaction do
-      wisdom_board = WisdomBoard.create(title:, content:, photo:, user_id: @user.id) # 修正: wisdom_board の作成方法を修正
+      wisdom_board = WisdomBoard.create(title:, content:, photo:, user_id: @user.id)
 
       tag_objects = tag_names.map { |name| WisdomTag.find_or_create_by(name:) }
-      wisdom_board.wisdom_tags << tag_objects # 修正: wisdom_tags の関連付け方法を修正
+      wisdom_board.wisdom_tags << tag_objects
 
       @wisdom_attributes.each do |_, wisdom_board_params|
         image = wisdom_board_params['image']
