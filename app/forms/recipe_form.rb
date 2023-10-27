@@ -42,7 +42,7 @@ class RecipeForm
         image = recipe_params['image']
         description = recipe_params['description']
 
-          RecipePhoto.create(recipe_id: recipe.id, image: image, description: description)
+        recipe.recipe_photos.create(image: image, description: description)
         end
       end
 
