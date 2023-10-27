@@ -1,7 +1,7 @@
 class PhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-    storage :fog
+  storage :fog
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
@@ -11,24 +11,32 @@ class PhotoUploader < CarrierWave::Uploader::Base
     'top_recipe.svg'
   end
 
-  process resize_to_fill: [300, 300]
-  process :quality => 85
+  process resize_to_fit: [300, 300]
+  process :optimize
 
   def extension_allowlist
     %w[jpg jpeg gif png]
   end
 
   def filename
-    original_filename if original_filename
+    "#{secure_token}.#{file.extension}" if original_filename.present?
   end
 
   private
 
-  def quality(percentage)
+  def optimize
     manipulate! do |img|
-      img.quality(percentage)
-      img = yield(img) if block_given?
+      img.strip
+      img.combine_options do |c|
+        c.quality "80"
+        c.interlace "Plane"
+      end
       img
     end
+  end
+
+  def secure_token
+    var = :"@#{mounted_as}_secure_token"
+    model.instance_variable_get(var) || model.instance_variable_set(var, SecureRandom.uuid)
   end
 end
