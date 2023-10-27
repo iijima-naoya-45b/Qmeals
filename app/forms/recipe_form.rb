@@ -3,8 +3,11 @@ class RecipeForm
   attr_accessor :title, :content, :cooking_time, :ingredient_name, :unit_unit, :photo, :tag_names, :ingredients_attributes,
                 :recipe_mains
 
-  validates :title, presence: true, length: { minimum: 3, maximum: 100 }
-  validates :content, presence: true, length: { maximum: 100 }
+  mount_uploader :photo, PhotoUploader
+  mount_uploader :image, RecipeImageUploader
+
+  validates :title, presence: true, length: { maximum: 500 }
+  validates :content, presence: true, length: { maximum: 500 }
   validates :cooking_time, presence: true, length: { maximum: 10 }
   validates :tag_names, presence: true, length: { maximum: 100 }
 
