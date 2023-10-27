@@ -1,11 +1,7 @@
 class PhotoUploader < CarrierWave::Uploader::Base
   include CarrierWave::MiniMagick
 
-  if Rails.env.development? || Rails.env.test? 
-    storage :file
-  else
     storage :fog
-  end
 
   def store_dir
     "uploads/#{model.class.to_s.underscore}/#{mounted_as}/#{model.id}"
@@ -15,7 +11,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
     'top_recipe.svg'
   end
 
-  process resize_to_fill: [500, 500]
+  process resize_to_fill: [300, 300]
   process :quality => 85
 
   def extension_allowlist
