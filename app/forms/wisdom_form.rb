@@ -1,16 +1,12 @@
 class WisdomForm
   include ActiveModel::Model
 
-  attr_accessor :title, :content, :tag_names, :photo, :wisdom_attributes
-  attr_accessor :photo, :recipe_image
+  attr_accessor :title, :content, :tag_names, :photo, :image, :wisdom_attributes
 
   validates :title, presence: true, length: { maximum: 140 }
   validates :content, presence: true, length: { maximum: 140 }
   validates :tag_names, presence: true, length: { maximum: 140 }
   validates :photo, presence: true
-
-  mount_uploader :photo, WisdomPhotoUploader
-  mount_uploader :image, WisdomImageUploader
 
   def initialize(attributes = {}, user)
     super(attributes)
