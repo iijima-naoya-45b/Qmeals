@@ -39,7 +39,7 @@
     <%= f.file_field :photo, class: 'form-control' %>
   </div>
 
-  <% (1..6).each do |index| %>
+  <% (1..4).each do |index| %>
   <div class="form-group-photo mt-5">
     <%= f.label "image", "料理の写真 #{index}" %>
     <%= f.file_field "recipe_mains[#{index - 1}][image]", class: 'form-control' %>

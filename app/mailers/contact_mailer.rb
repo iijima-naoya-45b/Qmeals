@@ -4,6 +4,6 @@ class ContactMailer < ApplicationMailer
 
   def contact_mail(contact)
     @contact = contact
-    mail(subject: 'お問い合わせを承りました', to: ENV['GMAIL_USERNAME'])
+    mail(subject: 'お問い合わせを承りました', to: ENV.fetch('GMAIL_USERNAME', nil))
   end
 end

@@ -1,11 +1,11 @@
+user_id = User.first.id
+
 FavoriteWisdom.create(
-  id: 1,
-  user_id: 1,
+  user_id:,
   wisdom_board_id: 1
 )
 
 FavoriteWisdom.create(
-  id: 2,
-  user_id: 1,
+  user_id:,
   wisdom_board_id: 2
 )

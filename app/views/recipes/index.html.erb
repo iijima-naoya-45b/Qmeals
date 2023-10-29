@@ -8,13 +8,11 @@
   <div class="boarder mt-3">
     <% @recipes.each do |recipe| %>
       <div class="flex-container">
-        <% if logged_in? %>
-          <% if current_user.recipe_favorite?(recipe) %>
+          <% if current_user&.recipe_favorite?(recipe) %>
             <%= render 'favorite_recipes/recipe_unfavorite', {recipe: recipe} %>
           <% else %>
             <%= render 'favorite_recipes/recipe_favorite', { recipe: recipe } %>
           <% end %>
-        <% end %>
         <h3 class="ml-3"><%= link_to recipe.title, recipe_path(recipe), class: 'header-link' %></h3>
         <%= render 'destroy', recipe: recipe %>
       </div>

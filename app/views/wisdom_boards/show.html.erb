@@ -1,13 +1,11 @@
 <div class="container">
   <div class="flex-container">
   
-    <% if logged_in? %>
-      <% if current_user.wisdom_board_favorite?(@wisdom_board) %>
+      <% if current_user&.wisdom_board_favorite?(@wisdom_board) %>
         <%= render 'favorite_wisdoms/wisdom_unfavorite', wisdom_board: @wisdom_board %>
       <% else %>
         <%= render 'favorite_wisdoms/wisdom_favorite', wisdom_board: @wisdom_board %>
       <% end %>
-    <% end %>
 
     <h3 class="wisdom_board mt-3"><%= "タイトル：#{@wisdom_board.title}" %></h3>
   </div>

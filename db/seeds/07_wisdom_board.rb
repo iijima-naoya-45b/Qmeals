@@ -1,13 +1,13 @@
+user_id = User.first.id
+
 WisdomBoard.create(
-  id: 1,
   title: 'wisdomboardの検証',
-  content: 'widsomboardのcontent確認',
-  user_id: 1
+  content: 'wisdomboardのcontent確認',
+  user_id:
 )
 
 WisdomBoard.create(
-  id: 2,
   title: 'wisdomboard2の検証',
-  content: 'widsomboard2のcontent確認',
-  user_id: 2
+  content: 'wisdomboard2のcontent確認',
+  user_id:
 )

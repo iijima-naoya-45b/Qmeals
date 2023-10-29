@@ -1,12 +1,10 @@
 <div class="container">
   <div class="flex-container">
-    <% if logged_in? %>
-      <% if current_user.recipe_favorite?(@recipe) %>
+      <% if current_user&.recipe_favorite?(@recipe) %>
         <%= render 'favorite_recipes/recipe_unfavorite', {recipe: @recipe} %>
       <% else %>
         <%= render 'favorite_recipes/recipe_favorite', { recipe: @recipe } %>
       <% end %>
-    <% end %>
     <h3 class="recipe-title mt-3"><%= "タイトル：#{@recipe.title}" %></h3>
   </div>
 

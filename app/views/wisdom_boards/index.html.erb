@@ -8,13 +8,11 @@
   <div class="boarder mt-3">
     <% @wisdom_boards.each do |wisdom_board| %>
       <div class="flex-container">
-        <% if logged_in? %>
-          <% if current_user.wisdom_board_favorite?(wisdom_board) %>
+          <% if current_user&.wisdom_board_favorite?(wisdom_board) %>
             <%= render 'favorite_wisdoms/wisdom_unfavorite', {wisdom_board: wisdom_board} %>
           <% else %>
             <%= render 'favorite_wisdoms/wisdom_favorite', {wisdom_board: wisdom_board} %>
           <% end %>
-        <% end %>
         <h3 class="ml-3"><%= link_to wisdom_board.title, wisdom_board_path(wisdom_board), class: 'header-link' %></h3>
         <%= render 'destroy', wisdom_board: wisdom_board %>
       </div>

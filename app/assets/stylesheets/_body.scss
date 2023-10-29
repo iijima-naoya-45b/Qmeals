@@ -1,3 +1,36 @@
+@media (max-width: 750px) {
+    .container.header {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .top_information {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .right_header {
+        margin-top: 1rem; /* 適切なマージンを設定して調整 */
+        display: flex;
+        align-items: center;
+    }
+
+    .middle_information {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .header-link {
+        margin: 0.5rem; /* 適切なマージンを設定して調整 */
+    }
+}
+
 .container {
     background-color: #ffffff;
     padding: 20px;
