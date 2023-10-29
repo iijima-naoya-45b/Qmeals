@@ -31,7 +31,7 @@ class WisdomPhotoUploader < CarrierWave::Uploader::Base
     manipulate! do |img|
       img.strip
       img.combine_options do |c|
-        c.quality '80'
+        c.quality '70'
         c.interlace 'Plane'
       end
       img
