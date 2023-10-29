@@ -1,4 +1,3 @@
-# お買い物リストのコントローラ
 class ShopListsController < ApplicationController
   before_action :set_shoppinglist, only: %i[edit update destroy]
 

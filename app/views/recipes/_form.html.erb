@@ -1,20 +1,21 @@
 <%= form_with model: @recipe_form, url: recipes_path(@recipe), class: 'my-form' do |f| %>
+  <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
-    <%= f.label :title, 'タイトル' %><span class="text-danger">（必須）</span>
+    <%= f.label :title, "タグ名" %><span class="text-danger">（必須）</span>
     <%= f.text_field :title, class: 'form-control', placeholder: '簡単！麻薬卵の作り方！！' %>
   </div>
   <div class="form-group">
-    <%= f.label :content, '本文' %><span class="text-danger">（必須）</span>
+    <%= f.label :content, "料理の本文" %><span class="text-danger">（必須）</span>
     <%= f.text_area :content, class: 'form-control', placeholder: '料理の特徴や想いなどを書きましょう！' %>
   </div>
   <div class="form-group">
-    <%= f.label :cooking_time, '調理時間' %><span class="text-danger">（必須）</span>
+    <%= f.label :cooking_time, "調理時間" %><span class="text-danger">（必須）</span>
     <%= f.text_field :cooking_time, class: 'form-control', placeholder: '〇〇分' %>
   </div>
 
   <div class="form-group">
-    <%= f.label :ingredient_name, '食材名' %>
-    <%= f.label :unit_unit, '分量・単位' %><span class="text-danger">（必須）</span>
+    <%= f.label :ingredient_name, "材料・調味料" %>
+    <%= f.label :unit_unit, "分量" %><span class="text-danger">（必須）</span>
   </div>
 
   <table>
@@ -31,21 +32,21 @@
   </table>
 
   <div class="mb-3">
-    <%= f.label :tag_name, 'タグ名' %><span class="text-danger">（必須）</span>
+    <%= f.label :tag_name, "タグ名" %><span class="text-danger">（必須）</span>
     <%= f.text_field :tag_name, placeholder: ',で区切って入力してください', class: 'form-control' %>
   </div>
   <div class="mb-3">
-    <%= f.label :photo, '写真' %>
+    <%= f.label :photo, "写真" %>
     <%= f.file_field :photo, class: 'form-control' %>
   </div>
 
   <% (1..4).each do |index| %>
   <div class="form-group-photo mt-5">
-    <%= f.label "image", "料理の写真 #{index}" %>
+    <%= f.label :image, "料理の写真#{index}" %>
     <%= f.file_field "recipe_mains[#{index - 1}][image]", class: 'form-control' %>
   </div>
   <div class="form-group-instruction">
-    <%= f.label "description", "料理の作り方 #{index}" %>
+    <%= f.label :description, "料理の作り方#{index}" %>
     <%= f.text_area "recipe_mains[#{index - 1}][description]", class: 'form-control' %>
   </div>
   

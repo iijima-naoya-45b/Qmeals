@@ -9,7 +9,6 @@ class AvatarUploader < CarrierWave::Uploader::Base
   else
     storage :fog
   end
-  
 
   def store_dir
     "uploads/#{model.class.model_name.singular}/#{mounted_as}/#{model.id}"

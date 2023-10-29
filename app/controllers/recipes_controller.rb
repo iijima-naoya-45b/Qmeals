@@ -1,23 +1,31 @@
 class RecipesController < ApplicationController
   skip_before_action :require_login, only: %i[index show]
   def index
-    if params[:title].present? && params[:tag].present?
-      @recipes = Recipe.joins(:recipe_tags).where('recipes.title LIKE ? AND recipe_tags.name LIKE ?', "%#{params[:title]}%",
-                                                  "%#{params[:tag]}%").order('recipes.created_at DESC').page(params[:page])
-    elsif params[:title].present?
-      @recipes = Recipe.where('title LIKE ?', "%#{params[:title]}%").order(created_at: :desc).page(params[:page])
-    elsif params[:tag].present?
-      @recipes = Recipe.joins(:recipe_tags).where('recipe_tags.name LIKE ?',
-                                                  "%#{params[:tag]}%").order('recipes.created_at DESC').page(params[:page])
-    else
-      @recipes = Recipe.includes(:user).page(params[:page]).order(created_at: :desc)
-    end
+    @recipes = Recipe.includes(:user).filtered_search(params[:title],
+                                                      params[:tag]).order(created_at: :desc).page(params[:page])
   end
 
   def show
-    @recipe = Recipe.includes(:user, :recipe_comments, :recipe_tags, :ingredients).find(params[:id])
+    @recipe = Recipe.find(params[:id])
     @comments = @recipe.recipe_comments.includes(:user).order(created_at: :desc)
     @comment = RecipeComment.new
+    @shopping_list_items = @recipe.add_shopping_list_items(current_user)
+  end
+
+  def add_to_shopping_list
+    @recipe = Recipe.find(params[:id])
+    @shopping_list_items = @recipe.add_shopping_list_items(current_user)
+    recipe_ingredient_names = @recipe.ingredients.pluck(:name)
+    ingredient_name = params[:ingredient_name]
+
+    if @shopping_list_items.include?(ingredient_name)
+      flash[:danger] = 'この食材はすでにショッピングリストに追加されています。'
+    else
+      shopping_list_notes = @recipe.title
+      current_user.shopping_lists.create(item: ingredient_name, notes: shopping_list_notes)
+      flash[:success] = '食材をショッピングリストに追加しました。'
+    end
+    redirect_to recipe_path(@recipe)
   end
 
   def new
@@ -31,7 +39,7 @@ class RecipesController < ApplicationController
       redirect_to recipes_path, success: 'レシピが作成されました'
     else
       flash.now[:danger] = 'レシピを投稿できませんでした'
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 
@@ -53,5 +61,9 @@ class RecipesController < ApplicationController
       ingredients_attributes: %i[id ingredient_name unit_unit],
       recipe_mains: %i[id image description]
     )
+  end
+
+  def shopping_list_item_params
+    params.require(:shopping_list_item).permit(:item)
   end
 end

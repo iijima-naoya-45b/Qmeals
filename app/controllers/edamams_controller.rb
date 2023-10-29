@@ -1,7 +1,9 @@
 class EdamamsController < ApplicationController
   skip_before_action :require_login, only: %i[index]
+
   require 'httpclient'
   require 'cgi'
+
   def index
     query = params[:search].blank? ? 'nodata' : CGI.escape(params[:search])
     client = HTTPClient.new

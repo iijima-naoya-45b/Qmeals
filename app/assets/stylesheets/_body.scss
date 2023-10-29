@@ -1,5 +1,5 @@
 @media (max-width: 750px) {
-    .container.header {
+    .header {
         width: 100%;
         display: flex;
         flex-direction: column;
@@ -14,7 +14,7 @@
     }
 
     .right_header {
-        margin-top: 1rem; /* 適切なマージンを設定して調整 */
+        margin-top: 1rem;
         display: flex;
         align-items: center;
     }
@@ -27,7 +27,7 @@
     }
 
     .header-link {
-        margin: 0.5rem; /* 適切なマージンを設定して調整 */
+        margin: 0.5rem;
     }
 }
 
@@ -37,9 +37,9 @@
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     font-size: 18px;
     color: #333;
-    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3); /* 影をつける */
-    margin-top: 30px; /* 上部の余白を設定 */
-    margin-bottom: 30px; /* 下部の余白を設定 */
+    text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+    margin-top: 30px;
+    margin-bottom: 30px;
 }
 
 .alert.alert-success {
@@ -68,7 +68,6 @@
     text-align: center;
 }
 
-
 .topics h3 {
     margin-bottom: 10px;
     font-size: 20px;
@@ -82,12 +81,12 @@
 }
 
 .break-all {
-    width: 500px; /* 幅を500pxに設定 */
-    margin: 0 auto; /* 中央寄せにするためのマージン設定 */
-    word-wrap: break-word; /* 長い単語やURLがはみ出た場合に改行 */
-  }
+    width: 500px;
+    margin: 0 auto;
+    word-wrap: break-word;
+}
 
-  img {
+img {
     max-width: 100%;
     height: auto;
-    }
+}

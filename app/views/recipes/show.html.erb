@@ -14,15 +14,28 @@
   <h4 class='mt-2'><%= "調理時間：#{@recipe.cooking_time}分" %></h4>
   
   <% @recipe.ingredients.each do |recipe_ingredient| %>
-    <table class="table table-spacing">
-      <tbody>
-        <tr>
-          <td style="width: 300px;"><%= recipe_ingredient.name %></td>
-          <td style="width: 300px;"><%= recipe_ingredient.unit.unit %></td>
-        </tr>
-      </tbody>
-    </table>
-  <% end %>
+  <table class="table table-spacing">
+    <tbody>
+      <tr>
+        <td style="width: 300px;">
+          <%= recipe_ingredient.name %>
+        </td>
+        <td style="width: 300px;">
+          <% if @recipe.add_shopping_list_items(current_user).include?(recipe_ingredient.name) %>
+            <%= button_tag '追加済み', class: 'btn btn-secondary', type: 'button', disabled: true %>
+          <% else %>
+            <%= form_with(url: add_to_shopping_list_recipe_path(@recipe), class: 'add-to-shopping-list-form') do |f| %>
+              <%= f.hidden_field :ingredient_name, value: recipe_ingredient.name %>
+              <%= f.submit '買い物リストに追加', class: 'btn btn-success' %>
+            <% end %>
+          <% end %>
+        <td style="width: 300px;">
+          <%= recipe_ingredient.unit.unit %>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+<% end %>
 
   <div class="recipe-main">
     <div class="btn-group" role="group" aria-label="Recipe Tags">
