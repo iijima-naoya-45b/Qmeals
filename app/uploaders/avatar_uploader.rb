@@ -4,7 +4,12 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process resize_to_fill: [80, 80]
   process :optimize
 
-  storage :fog
+  if Rails.env.development? || Rails.env.test?
+    storage :file
+  else
+    storage :fog
+  end
+  
 
   def store_dir
     "uploads/#{model.class.model_name.singular}/#{mounted_as}/#{model.id}"
