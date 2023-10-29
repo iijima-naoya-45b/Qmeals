@@ -16,6 +16,7 @@ Rails.application.routes.draw do
   resource :profile, only: %i[show edit update]
 
   resources :recipes, only: %i[index show new create edit update destroy] do
+    post 'add_to_shopping_list', on: :member
     resources :recipe_comments, only: %i[create destroy], shallow: true
     collection do
       get :favorite_recipes

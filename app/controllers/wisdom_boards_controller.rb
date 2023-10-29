@@ -3,17 +3,8 @@ class WisdomBoardsController < ApplicationController
   before_action :set_wisdom_board, only: %i[show edit update destroy]
 
   def index
-    if params[:title].present? && params[:tag].present?
-      @wisdom_boards = WisdomBoard.joins(:wisdom_tags).where('wisdom_boards.title LIKE ? OR wisdom_tags.name LIKE ?',
-                                                             "%#{params[:title]}%", "%#{params[:tag]}%").page(params[:page])
-    elsif params[:title].present?
-      @wisdom_boards = WisdomBoard.where('title LIKE ?', "%#{params[:title]}%").page(params[:page])
-    elsif params[:tag].present?
-      @wisdom_boards = WisdomBoard.joins(:wisdom_tags).where('wisdom_tags.name LIKE ?',
-                                                             "%#{params[:tag]}%").page(params[:page])
-    else
-      @wisdom_boards = WisdomBoard.includes(:user).order(created_at: :desc).page(params[:page])
-    end
+    @wisdom_boards = WisdomBoard.includes(:user).filtered_search(params[:title],
+                                                                 params[:tag]).order(created_at: :desc).page(params[:page])
   end
 
   def show
@@ -33,7 +24,7 @@ class WisdomBoardsController < ApplicationController
       redirect_to wisdom_boards_path, success: '投稿が成功しました'
     else
       flash.now[:danger] = '投稿できませんでした'
-      render :new
+      render :new, status: :unprocessable_entity
     end
   end
 

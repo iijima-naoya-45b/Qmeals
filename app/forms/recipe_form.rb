@@ -6,7 +6,7 @@ class RecipeForm
   validates :title, presence: true, length: { maximum: 500 }
   validates :content, presence: true, length: { maximum: 500 }
   validates :cooking_time, presence: true, length: { maximum: 10 }
-  validates :tag_names, presence: true, length: { maximum: 100 }
+  validates :tag_names, presence: true, length: { maximum: 30 }
 
   def initialize(attributes = {}, user)
     super(attributes)

@@ -1,4 +1,30 @@
 ja:
+  activemodel:
+    errors:
+      models:
+        recipe_form:
+          attributes:
+            title:
+              blank: "タイトルが入力されていません"
+            content:
+              blank: "料理の内容が入力されていません"
+            cooking_time:
+              blank: "調理時間が入力されていません"
+              too_long: "調理時間が長すぎます。最大%{count}文字までです。"
+            tag_names:
+              blank: "タグ名が入力されていません"
+              too_long: "長すぎます。最大%{count}文字までです。"
+          blank: "入力は必須です"
+      messages:
+        blank: "入力は必須です"
+    recipe:
+      title: タイトル
+      content: 料理の内容
+      cooking_time: 調理時間
+      tag_name: タグ名
+      photo: 料理の写真
+      description: 料理の説明
+
   activerecord:
       models:
         user: ユーザー

@@ -7,10 +7,10 @@ class ContactsController < ApplicationController
     @contact = Contact.new(contact_params)
     if @contact.save
       ContactMailer.contact_mail(@contact).deliver
-      redirect_to root_path, success: 'お問い合わせ内容を送信しました'
+      redirect_to root_path, t('contacts_new_create_success')
     else
-      flash.now[:danger] = 'お問い合わせに失敗しました'
-      render :new
+      flash.now[:danger] = t('contacts_new_create_failure')
+      render :new, status: :unprocessable_entity
     end
   end
 

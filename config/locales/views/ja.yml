@@ -55,3 +55,17 @@ ja:
   terms_of_services:
     index: 
       title: 利用規約
+  contacts:
+    new:
+      create:
+        success: お問い合わせに成功しました
+        failure: お問い合わせに失敗しました
+  recipes:
+    new:
+      title: 料理のタイトル
+      content: 料理の内容
+      cooking_time: 調理時間
+      tag_name: タグ名
+      photo: 写真
+      description: 説明
+      
