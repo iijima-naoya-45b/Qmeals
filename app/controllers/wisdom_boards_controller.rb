@@ -9,7 +9,8 @@ class WisdomBoardsController < ApplicationController
     elsif params[:title].present?
       @wisdom_boards = WisdomBoard.where('title LIKE ?', "%#{params[:title]}%").page(params[:page])
     elsif params[:tag].present?
-      @wisdom_boards = WisdomBoard.joins(:wisdom_tags).where('wisdom_tags.name LIKE ?', "%#{params[:tag]}%").page(params[:page])
+      @wisdom_boards = WisdomBoard.joins(:wisdom_tags).where('wisdom_tags.name LIKE ?',
+                                                             "%#{params[:tag]}%").page(params[:page])
     else
       @wisdom_boards = WisdomBoard.includes(:user).order(created_at: :desc).page(params[:page])
     end

@@ -1,0 +1,31 @@
+AllCops:
+  NewCops: enable
+  DisplayCopNames: false
+  SuggestExtensions: false
+  Include:
+    - '**/*.rb'
+    - '**/*.gemfile'
+    - '**/*.gemspec'
+    - '**/*.rake'
+    - '**/*.ru'
+    - '**/Gemfile'
+    - '**/Rakefile'
+  Exclude:
+    - 'db/**/*'
+    - 'config/**/*'
+    - 'Gemfile'
+    - 'Rakefile'
+
+Gemspec/DeprecatedAttributeAssignment:
+  Enabled: true
+Gemspec/DevelopmentDependencies:
+  Enabled: true
+
+Style/FrozenStringLiteralComment:
+  Enabled: false
+
+Lint/UselessAssignment:
+  Enabled: true
+
+Style/Documentation:
+  Enabled: false

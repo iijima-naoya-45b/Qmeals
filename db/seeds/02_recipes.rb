@@ -1,15 +1,15 @@
-# レシピ1
+user_id = User.first.id
+
 Recipe.create(
-  id: 1,
-  user_id: 1,
+  user_id:,
   title: '美味しいカレーライス',
   content: 'あのカレーが短時間でできる！？',
   cooking_time: 10
 )
 
+user_id = User.second.id
 Recipe.create(
-  id: 2,
-  user_id: 2,
+  user_id:,
   title: 'たこわさ',
   content: 'ビールのお供に！！',
   cooking_time: 5

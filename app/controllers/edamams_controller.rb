@@ -5,7 +5,10 @@ class EdamamsController < ApplicationController
   def index
     query = params[:search].blank? ? 'nodata' : CGI.escape(params[:search])
     client = HTTPClient.new
-    res = client.get("https://api.edamam.com/api/recipes/v2?type=public&q=#{query}&app_id=#{ENV['application_id']}&app_key=#{ENV['application_keys']}")
+    res = client.get("https://api.edamam.com/api/recipes/v2?type=public&q=#{query}&app_id=#{ENV.fetch('application_id',
+                                                                                                      nil)}&app_key=#{ENV.fetch(
+                                                                                                        'application_keys', nil
+                                                                                                      )}")
     @foods = JSON.parse(res.body)
   end
 end

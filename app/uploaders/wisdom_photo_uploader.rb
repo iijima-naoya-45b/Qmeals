@@ -18,7 +18,7 @@ class WisdomPhotoUploader < CarrierWave::Uploader::Base
   end
 
   def filename
-    original_filename if original_filename
+    original_filename
   end
 
   private
@@ -27,11 +27,10 @@ class WisdomPhotoUploader < CarrierWave::Uploader::Base
     manipulate! do |img|
       img.strip
       img.combine_options do |c|
-        c.quality "80"
-        c.interlace "Plane" 
+        c.quality '80'
+        c.interlace 'Plane'
       end
       img
     end
   end
 end
-

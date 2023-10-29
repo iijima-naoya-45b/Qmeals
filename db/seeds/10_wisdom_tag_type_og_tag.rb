@@ -1,11 +1,11 @@
+wisdom_board_id = WisdomBoard.first.id
+
 WisdomTypeOfTag.create(
-  id: 1,
-  wisdom_board_id: 1,
+  wisdom_board_id:,
   wisdom_tag_id: 1
 )
 
 WisdomTypeOfTag.create(
-  id: 2,
-  wisdom_board_id: 2,
+  wisdom_board_id:,
   wisdom_tag_id: 2
 )

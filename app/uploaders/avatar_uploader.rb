@@ -4,7 +4,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
   process resize_to_fill: [80, 80]
   process :optimize
 
-    storage :fog
+  storage :fog
 
   def store_dir
     "uploads/#{model.class.model_name.singular}/#{mounted_as}/#{model.id}"
@@ -33,8 +33,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
     manipulate! do |img|
       img.strip
       img.combine_options do |c|
-        c.quality "80"
-        c.interlace "Plane"
+        c.quality '80'
+        c.interlace 'Plane'
       end
       img
     end

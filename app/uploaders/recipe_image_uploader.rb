@@ -37,8 +37,8 @@ class RecipeImageUploader < CarrierWave::Uploader::Base
     manipulate! do |img|
       img.strip
       img.combine_options do |c|
-        c.quality "80"
-        c.interlace "Plane"
+        c.quality '80'
+        c.interlace 'Plane'
       end
       img
     end

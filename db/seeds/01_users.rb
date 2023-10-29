@@ -1,19 +1,15 @@
-# db/seeds/users.seed.rb
-
 require 'faker'
 
-# 生成するユーザーの数を指定
-# db/seeds/users.seed.rb
+create_users = 10
 
-# 生成するユーザーの数を指定
-num_users = 10
-
-num_users.times do |n|
+create_users.times do |n|
   email = "xxxx@example.com#{n}"
   name = "test#{n}"
+  password = 'password'
 
   User.create!(
     name:,
-    email:
+    email:,
+    password:
   )
 end
