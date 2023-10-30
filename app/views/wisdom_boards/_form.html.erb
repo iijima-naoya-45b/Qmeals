@@ -20,10 +20,6 @@
     </div>
     
     <% (1..6).each do |index| %>
-      <div class="form-group mt-5">
-        <%= f.label "image", "知恵袋の写真#{index}" %>
-        <%= f.file_field "wisdom_attributes[#{index - 1}][image]", class: 'form-control' %>
-      </div>
       <div class="form-group">
         <%= f.label "description", "知恵袋の説明#{index}" %>
         <%= f.text_area "wisdom_attributes[#{index - 1}][description]", class: 'form-control', placeholder: "説明文#{index}を入力してください" %>
