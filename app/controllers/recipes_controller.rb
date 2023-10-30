@@ -35,10 +35,7 @@ class RecipesController < ApplicationController
   def create
     @recipe_form = RecipeForm.new(recipe_params, current_user)
 
-    if @recipe.save
-      image_params[:images].each do |image|
-        ImageUploadJob.perform_later(@recipe.id, image)
-      end
+    if @recipe_form.save
       redirect_to recipes_path, success: 'レシピが作成されました'
     else
       flash.now[:danger] = 'レシピを投稿できませんでした'

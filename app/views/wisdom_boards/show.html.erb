@@ -29,11 +29,12 @@
 
   <div class="wisdom-main">
     <% @wisdom_board.wisdom_photos.each_with_index do |photo, index| %>
+      <div class="break-all mt-2 mb-2">
         <h3><%= "知恵袋の説明#{index + 1}" %></h3>
         <%= image_tag photo.image_url %>
-        <div class="break-all mt-2 mb-2">
-          <p><%= photo.description %></p>
-        </div>
+      </div>
+      <p><%= photo.description %></p>
+    </div>
     <% end %>
   </div>
 
