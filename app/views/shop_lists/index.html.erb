@@ -1,4 +1,3 @@
-<% content_for(:title, t('.title')) %>
 <div class="container">
   <div class="shopping-container">
     <div class="split-item split-left">
@@ -20,43 +19,41 @@
         <% end %>
       </div>
     </div>
-    
+
     <div class="split-item split-right">
       <div class="split-right__inner">
         <h3 class="text-center">お買い物リスト</h3>
         <table class="table mt-4">
           <thead>
             <tr>
-              <tr>
-                <th scope="col"><%= t('shop_lists.headers.item') %></th>
-                <th scope="col"><%= t('shop_lists.headers.notes') %></th>
-                <th scope="col"></th>
-                <th scope="col"></th>
-              </tr>
+              <th scope="col"><%= t('shop_lists.headers.item') %></th>
+              <th scope="col"><%= t('shop_lists.headers.notes') %></th>
+              <th scope="col"></th>
+              <th scope="col"></th>
+            </tr>
           </thead>
           <tbody>
-          
-          <% if @shoppinglists.present? %>
-            <% @shoppinglists.each do |shopping| %>
-            <tr>
-              <td><%= shopping.item %></td>
-              <td><%= shopping.notes %></td>
-              <td class="botton">
-                <%= link_to edit_shop_list_path(shopping), class: "btn btn-outline-primary" do %>
-                  <span class="d-none d-md-inline">編集</span>
-                <% end %>
-              </td>
-              <td class="botton">
-                <%= link_to shop_list_path(shopping), method: :delete, data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } do %>
-                  <span class="btn btn-outline-danger">削除</span>
-                <% end %>
-              </td>
-            </tr>
+            <% if @shoppinglists.present? %>
+              <% @shoppinglists.each do |shopping| %>
+                <tr>
+                  <td><%= shopping.item %></td>
+                  <td><%= shopping.notes %></td>
+                  <td class="botton">
+                    <%= link_to edit_shop_list_path(shopping), class: "btn btn-outline-primary" do %>
+                      <span class="d-none d-md-inline">編集</span>
+                    <% end %>
+                  </td>
+                  <td class="botton">
+                    <%= link_to shop_list_path(shopping), method: :delete, data: { turbo_method: :delete, turbo_confirm: '本当に削除しますか？' } do %>
+                      <span class="btn btn-outline-danger">削除</span>
+                    <% end %>
+                  </td>
+                </tr>
+              <% end %>
             <% end %>
-          <% end %>
           </tbody>
         </table>
       </div>
     </div>
-</div>
+  </div>
 </div>

@@ -49,7 +49,6 @@
     <%= f.label :description, "料理の作り方#{index}" %>
     <%= f.text_area "recipe_mains[#{index - 1}][description]", class: 'form-control' %>
   </div>
-  
   <% end %>
 
   <%= f.submit '投稿', class: 'btn btn-success' %>
