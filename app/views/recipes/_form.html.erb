@@ -1,7 +1,7 @@
 <%= form_with model: @recipe_form, url: recipes_path(@recipe), class: 'my-form' do |f| %>
   <%= render 'shared/error_messages', object: f.object %>
   <div class="form-group">
-    <%= f.label :title, "タグ名" %><span class="text-danger">（必須）</span>
+    <%= f.label :title, "タイトル" %><span class="text-danger">（必須）</span>
     <%= f.text_field :title, class: 'form-control', placeholder: '簡単！麻薬卵の作り方！！' %>
   </div>
   <div class="form-group">
