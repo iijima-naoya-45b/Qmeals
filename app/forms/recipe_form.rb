@@ -1,6 +1,6 @@
 class RecipeForm
   include ActiveModel::Model
-  attr_accessor :title, :content, :cooking_time, :ingredient_name, :unit_unit, :photo, :image, :tag_names, :ingredients_attributes,
+  attr_accessor :title, :content, :cooking_time, :ingredient_name, :unit_unit, :photo, :tag_names, :ingredients_attributes,
                 :recipe_mains
 
   validates :title, presence: true, length: { maximum: 500 }
@@ -40,11 +40,10 @@ class RecipeForm
       end
 
       @recipe_mains.each do |_, recipe_params|
-        image = recipe_params['image']
         description = recipe_params['description']
       
-        if image.present? && description.present?
-          recipe.recipe_photos.create(image: image, description: description)
+        if description.present?
+          recipe.recipe_photos.create(description: description)
         end
       end
       true
