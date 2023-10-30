@@ -41,10 +41,6 @@
   </div>
 
   <% (1..4).each do |index| %>
-  <div class="form-group-photo mt-5">
-    <%= f.label :image, "料理の写真#{index}" %>
-    <%= f.file_field "recipe_mains[#{index - 1}][image]", class: 'form-control' %>
-  </div>
   <div class="form-group-instruction">
     <%= f.label :description, "料理の作り方#{index}" %>
     <%= f.text_area "recipe_mains[#{index - 1}][description]", class: 'form-control' %>
