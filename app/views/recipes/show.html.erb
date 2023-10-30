@@ -54,7 +54,6 @@
   <div class="recipe-main">
     <% @recipe.recipe_photos.each_with_index do |recipe_photo, index| %>
       <h3><%= "レシピの説明#{index + 1}" %></h3>
-        <%= image_tag recipe_photo.image_url %>
         <div class="break-all mt-2 mb-2">
           <%= recipe_photo.description %>
         </div>
