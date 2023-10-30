@@ -53,10 +53,10 @@
 
   <div class="recipe-main">
     <% @recipe.recipe_photos.each_with_index do |recipe_photo, index| %>
-      <h3><%= "レシピの説明#{index + 1}" %></h3>
-        <div class="break-all mt-2 mb-2">
-          <%= recipe_photo.description %>
-        </div>
+      <div class="break-all mt-2 mb-2">
+        <h3><%= "レシピの説明#{index + 1}" %></h3>
+        <%= recipe_photo.description %>
+      </div>
     <% end %>
   </div>
 
