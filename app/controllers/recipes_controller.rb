@@ -62,7 +62,7 @@ class RecipesController < ApplicationController
     params.require(:recipe_form).permit(
       :title, :content, :cooking_time, :tag_name, :photo,
       ingredients_attributes: %i[id ingredient_name unit_unit],
-      recipe_mains: %i[id image description]
+      recipe_mains: %i[id description]
     )
   end
 

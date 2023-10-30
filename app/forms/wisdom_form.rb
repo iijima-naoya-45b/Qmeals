@@ -1,7 +1,7 @@
 class WisdomForm
   include ActiveModel::Model
 
-  attr_accessor :title, :content, :tag_names, :photo, :image, :wisdom_attributes
+  attr_accessor :title, :content, :tag_names, :photo, :wisdom_attributes
 
   validates :title, presence: true, length: { maximum: 500 }
   validates :content, presence: true, length: { maximum: 500 }
@@ -27,11 +27,10 @@ class WisdomForm
       wisdom_board.wisdom_tags << tag_objects
 
       @wisdom_attributes.each do |_, wisdom_board_params|
-        image = wisdom_board_params['image']
         description = wisdom_board_params['description']
-        if image.present? && description.present?
-          WisdomPhoto.create(wisdom_board_id: wisdom_board.id, image:,
-                             description:)
+        if description.present?
+          WisdomPhoto.create(wisdom_board_id: wisdom_board.id,
+                            description:)
         end
       end
     end
