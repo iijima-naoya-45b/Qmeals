@@ -16,6 +16,7 @@ class RecipeImageUploader < CarrierWave::Uploader::Base
   end
 
   process resize_to_fit: [200, 200]
+  process resize_to_limit: [200, 200]
   process :optimize
 
   def extension_allowlist
