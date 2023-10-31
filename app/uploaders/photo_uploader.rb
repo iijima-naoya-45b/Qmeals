@@ -16,11 +16,11 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   version :mobile do
-    process resize_to_fit: [200, 200]
+    process resize_to_limit: [200, 200]
   end
 
   version :desktop do
-    process resize_to_fit: [500, 500]
+    process resize_to_limit: [500, 500]
   end
 
   
