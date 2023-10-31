@@ -15,7 +15,15 @@ class PhotoUploader < CarrierWave::Uploader::Base
     'top_recipe.svg'
   end
 
-  process resize_to_fit: [500, 500]
+  version :mobile do
+    process resize_to_fit: [200, 200]
+  end
+
+  version :desktop do
+    process resize_to_fit: [500, 500]
+  end
+
+  
   process :optimize
 
   def extension_allowlist
