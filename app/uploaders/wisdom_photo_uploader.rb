@@ -15,13 +15,7 @@ class WisdomPhotoUploader < CarrierWave::Uploader::Base
     'top_wisdom.svg'
   end
 
-  version :mobile do
-    process resize_to_limit: [200, 200]
-  end
-
-  version :desktop do
-    process resize_to_limit: [500, 500]
-  end
+  process resize_to_fill: [200, 200]
 
   def extension_allowlist
     %w[jpg jpeg gif png]
@@ -37,7 +31,7 @@ class WisdomPhotoUploader < CarrierWave::Uploader::Base
     manipulate! do |img|
       img.strip
       img.combine_options do |c|
-        c.quality '70'
+        c.quality '80'
         c.interlace 'Plane'
       end
       img

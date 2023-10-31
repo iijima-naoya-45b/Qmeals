@@ -15,14 +15,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
     'top_recipe.svg'
   end
 
-  version :mobile do
-    process resize_to_limit: [200, 200]
-  end
-
-  version :desktop do
-    process resize_to_limit: [500, 500]
-  end
-
+  process resize_to_fill: [200, 200]
   
   process :optimize
 
