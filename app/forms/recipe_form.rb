@@ -5,7 +5,7 @@ class RecipeForm
 
   validates :title, presence: true, length: { maximum: 500 }
   validates :content, presence: true, length: { maximum: 500 }
-  validates :cooking_time, presence: true, length: { maximum: 10 }
+  validates :cooking_time, presence: true, length: { maximum: 3 }
   validates :tag_names, presence: true, length: { maximum: 30 }
 
   def initialize(attributes = {}, user)
@@ -25,7 +25,7 @@ class RecipeForm
 
     ActiveRecord::Base.transaction do
       recipe = Recipe.create(title: @title, content: @content, cooking_time: @cooking_time, photo: @photo,
-                            user_id: @user.id)
+                             user_id: @user.id)
       recipe.recipe_tags = tag_names.map { |name| RecipeTag.find_or_create_by(name:) }
 
       @ingredients_attributes.each do |_, ingredient_params|
@@ -41,10 +41,8 @@ class RecipeForm
 
       @recipe_mains.each do |_, recipe_params|
         description = recipe_params['description']
-      
-        if description.present?
-          recipe.recipe_photos.create(description: description)
-        end
+
+        recipe.recipe_photos.create(description:) if description.present?
       end
       true
     end

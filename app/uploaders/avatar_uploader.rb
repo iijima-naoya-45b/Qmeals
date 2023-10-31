@@ -37,7 +37,7 @@ class AvatarUploader < CarrierWave::Uploader::Base
     manipulate! do |img|
       img.strip
       img.combine_options do |c|
-        c.quality '70'
+        c.quality '80'
         c.interlace 'Plane'
       end
       img

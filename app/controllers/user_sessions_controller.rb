@@ -1,4 +1,3 @@
-# Userログイン確認コントローラ
 class UserSessionsController < ApplicationController
   skip_before_action :require_login, only: %i[new create]
   before_action :store_location
