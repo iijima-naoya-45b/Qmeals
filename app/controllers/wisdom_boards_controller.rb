@@ -4,7 +4,7 @@ class WisdomBoardsController < ApplicationController
 
   def index
     @wisdom_boards = WisdomBoard.includes(:user).filtered_search(params[:title],
-                                                                params[:tag]).order(created_at: :desc).page(params[:page])
+                                                                 params[:tag]).order(created_at: :desc).page(params[:page])
   end
 
   def show

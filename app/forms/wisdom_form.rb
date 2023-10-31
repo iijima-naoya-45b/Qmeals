@@ -30,7 +30,7 @@ class WisdomForm
         description = wisdom_board_params['description']
         if description.present?
           WisdomPhoto.create(wisdom_board_id: wisdom_board.id,
-                            description:)
+                             description:)
         end
       end
     end

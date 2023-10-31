@@ -15,7 +15,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
     'top_recipe.svg'
   end
 
-  process resize_to_fit: [300, 300]
+  process resize_to_fit: [500, 500]
   process :optimize
 
   def extension_allowlist
@@ -32,7 +32,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
     manipulate! do |img|
       img.strip
       img.combine_options do |c|
-        c.quality '70'
+        c.quality '80'
         c.interlace 'Plane'
       end
       img
