@@ -19,7 +19,7 @@
       <%= f.file_field :photo, class: 'form-control' %>
     </div>
     
-    <% (1..6).each do |index| %>
+    <% (1..4).each do |index| %>
       <div class="form-group">
         <%= f.label "description", "知恵袋の説明#{index}" %>
         <%= f.text_area "wisdom_attributes[#{index - 1}][description]", class: 'form-control', placeholder: "説明文#{index}を入力してください" %>

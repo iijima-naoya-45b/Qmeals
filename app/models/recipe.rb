@@ -1,4 +1,5 @@
 class Recipe < ApplicationRecord
+  mount_uploader :photo, PhotoUploader
   belongs_to :user
   has_many :recipe_comments, dependent: :destroy
   has_many :recipe_type_of_tags, dependent: :destroy
