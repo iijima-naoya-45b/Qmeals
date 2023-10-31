@@ -15,7 +15,13 @@ class WisdomPhotoUploader < CarrierWave::Uploader::Base
     'top_wisdom.svg'
   end
 
-  process resize_to_limit: [500, 500]
+  version :mobile do
+    process resize_to_fit: [200, 200]
+  end
+
+  version :desktop do
+    process resize_to_fit: [500, 500]
+  end
 
   def extension_allowlist
     %w[jpg jpeg gif png]
