@@ -197,6 +197,7 @@ GEM
     formatador (1.1.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-analytics-rails (1.1.1)
     hashie (5.0.0)
     httpclient (2.8.3)
     i18n (1.14.1)
@@ -464,6 +465,7 @@ DEPENDENCIES
   faker
   ffi (= 1.15.5)
   fog-aws
+  google-analytics-rails
   httpclient
   image_processing (= 1.12.2)
   importmap-rails
