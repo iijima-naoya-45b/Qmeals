@@ -9,7 +9,14 @@
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= favicon_link_tag 'icon.svg' %>
-    <%= analytics_init if Rails.env.production? %>
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6CXQFQ61R"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-E6CXQFQ61R');
+    </script>
   </head>
 
   <body>
