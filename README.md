@@ -1,4 +1,7 @@
 # Qmealsについて
+下記、当アプリの本番環境になります。
+https://qmeals-app.onrender.com/
+
 
 ### 講師の方へ
 別レポジトリで作業していたのですが、解消できないコンフリクトの影響によりこちらで作業している状態です。
@@ -23,7 +26,7 @@ Readmeの内容は退避していたものを再現しましたが、プルリ�
 このような`あったら便利な機能`を実装し、アプリを使用する動機付けになればと思います。
 
 ## ◼︎ターゲット層
-下記ユーザーがが対象です。<br>
+下記ユーザーが対象です。<br>
 
 ・忙しい人(サラリーマン・OL)<br>
 ・普段料理をしない人<br>
@@ -80,14 +83,14 @@ ex).「にんじんはどこに栄養が集中するか。」「お肉は常温�
 | 環境   |  Docker   |
 | API   |  EdamamAPI   |
 | 高度な機能   | オートコンプリート    |
-| その他ライブラリ         |Fly.io |
+| その他ライブラリ         |render AWS-S3 |
 | デザイン       |Figma           |
 
 ## ◼︎ER図・インフラ構成図
 ・画面遷移図
 https://www.figma.com/file/TQS7LWbK0NfAG8z4oiTpoJ/MVP%E3%80%90%E7%94%BB%E9%9D%A2%E8%A8%AD%E8%A8%88%E5%9B%B3%E3%80%91?type=design&node-id=0-1&mode=design&t=IYLgSD2NiqYko7xC-0
 
-## ◼︎ER図・インフラ構成図
+## ◼︎ER図
 【左側】
 [![Image from Gyazo](https://i.gyazo.com/798f9f68ab862457cb1c755a85f46d0a.png)](https://gyazo.com/798f9f68ab862457cb1c755a85f46d0a)
 【右側】
