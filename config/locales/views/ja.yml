@@ -16,8 +16,8 @@ ja:
       title: ログイン
       login: ログイン
       registration: 新規登録
-      to_register_page: 登録ページへ
-      to_password_reset: パスワードをお忘れの方はこちら
+      to_register_page: アカウントをお持ちでない方はこちらから登録
+      to_password_reset: パスワードを忘れてしまった場合
   users:
     new:
       title: ユーザー登録
