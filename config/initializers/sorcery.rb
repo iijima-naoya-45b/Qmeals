@@ -80,7 +80,7 @@ Rails.application.config.sorcery.configure do |config|
   # i.e. [:twitter, :facebook, :github, :linkedin, :xing, :google, :liveid, :salesforce, :slack, :line].
   # Default: `[]`
   #
-  config.external_providers = [:google]
+  config.external_providers = [:google, :line]
 
   # You can change it by your local ca_file. i.e. '/etc/pki/tls/certs/ca-bundle.crt'
   # Path to ca_file. By default use a internal ca-bundle.crt.
@@ -219,12 +219,12 @@ Rails.application.config.sorcery.configure do |config|
   # config.salesforce.scope = "full"
   # config.salesforce.user_info_mapping = {:email => "email"}
 
-  #config.line.key = ENV['LINE_KEY']
-  #config.line.secret = ENV['LINE_SECRET'] 
-  #config.line.callback_url = Settings.sorcery[:line_callback_url]
-  #config.line.scope = "profile"
-  # config.line.bot_prompt = "normal"
-  # config.line.user_info_mapping = {name: 'displayName'}
+  config.line.key = ENV['LINE_KEY']
+  config.line.secret = ENV['LINE_SECRET'] 
+  config.line.callback_url = ENV['LINE_CALLBACK_URL']
+  config.line.scope = "profile"
+  config.line.bot_prompt = "normal"
+  config.line.user_info_mapping = {name: 'name', email: 'email'}
 
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
