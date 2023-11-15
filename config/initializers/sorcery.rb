@@ -222,7 +222,7 @@ Rails.application.config.sorcery.configure do |config|
   config.line.key = ENV['LINE_KEY']
   config.line.secret = ENV['LINE_SECRET'] 
   config.line.callback_url = ENV['LINE_CALLBACK_URL']
-  config.line.scope = "profile%20openid%20email"
+  config.line.scope = "profile%20email"
   config.line.bot_prompt = "normal"
   config.line.user_info_mapping = {name: 'displayName', email: 'email'}
 
