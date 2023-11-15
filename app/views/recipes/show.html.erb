@@ -26,7 +26,7 @@
           <% else %>
             <%= form_with(url: add_to_shopping_list_recipe_path(@recipe), class: 'add-to-shopping-list-form') do |f| %>
               <%= f.hidden_field :ingredient_name, value: recipe_ingredient.name %>
-              <%= f.submit '買い物リストに追加', class: 'btn btn-success' %>
+              <%= f.submit '買い物リストに追加', class: 'btn-brown' %>
             <% end %>
           <% end %>
         <td style="width: 300px;">
@@ -41,7 +41,7 @@
     <div class="btn-group" role="group" aria-label="Recipe Tags">
     <% @recipe.recipe_tags.each do |recipe_tag| %>
       <div class="btn-wrapper">
-        <div class="btn btn-success mb-3"><%= recipe_tag.name %></div>
+        <div class="btn-brown mb-3"><%= recipe_tag.name %></div>
       </div>
     <% end %>
   </div>

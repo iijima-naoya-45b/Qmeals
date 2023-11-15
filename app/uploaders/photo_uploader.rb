@@ -16,7 +16,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
   end
 
   process resize_to_fill: [200, 200]
-  
+
   process :optimize
 
   def extension_allowlist

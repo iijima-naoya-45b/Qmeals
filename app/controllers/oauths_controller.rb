@@ -15,7 +15,7 @@ class OauthsController < ApplicationController
         signup_and_login(provider)
         flash[:success] = "#{provider.titleize}アカウントでログインしました"
         redirect_to root_path
-      rescue
+      rescue StandardError
         flash[:danger] = "#{provider.titleize}アカウントでのログインに失敗しました"
         redirect_to root_path
       end

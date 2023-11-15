@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to '一覧に戻る', wisdom_boards_path, class: 'btn btn-success' %>
+  <%= link_to '一覧に戻る', wisdom_boards_path, class: 'btn-brown' %>
 
   <%= form_with model: @wisdom_form, url: wisdom_boards_path(@wisdom_board), class: 'my-form' do |f| %>
     <div class="form-group">
@@ -26,6 +26,6 @@
       </div>
     <% end %>
 
-    <%= f.submit '投稿する', class: 'btn btn-success' %>
+    <%= f.submit '投稿する', class: 'btn-brown' %>
   <% end %>
 </div>

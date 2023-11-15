@@ -5,13 +5,14 @@
   position: sticky;
   top: 0;
   z-index: 2;
+  font-family: Kosugi Maru, sans-serif;
 }
 
 .top_information {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #D9968B;
+  background-color: #FFA500;
   height: 80px;  
 }
 
@@ -26,7 +27,6 @@
   justify-content: space-between;
   width: 400px;
   height: 80px;
-  background-color: #4CE692;
 }
 
 .right_header > * {
@@ -38,7 +38,7 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #EFE399;
+  background-color: #FFEEC1;
   padding: 10px;
   gap: 20px;
 }
@@ -49,5 +49,18 @@
 }
 
 .header-link {
-  color: #8B4513;
+  color: #593030;
+}
+
+.btn-brown {
+  color: #ffffff;
+  background-color: #593030;
+  border: 2px solid #593030;
+  border-radius: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
 }
