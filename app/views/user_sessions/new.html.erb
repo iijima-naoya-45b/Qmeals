@@ -16,6 +16,9 @@
       <%= link_to auth_at_provider_path(provider: :google), class: "btn btn-light mt-5 py-2 px-3", style:"background-color:#0d6efd; color:#fff;" do %>
           <i class="bi bi-google me-2"></i>Googleでログイン
         <% end %>
+      <%= link_to auth_at_provider_path(provider: :line) , class: "btn btn-light mt-5 py-2 px-3", style:"background-color:#0d6efd; color:#198754;" do %>
+          <i class="bi bi-google me-2"></i>Lineでログイン
+        <% end %>
       <div class='text-center'>
         <%= link_to t('user_sessions.new.to_register_page'), new_user_path, class: 'btn btn-success' %>
         <%= link_to t('user_sessions.new.to_password_reset'), new_password_reset_path, class: 'btn btn-success' %>

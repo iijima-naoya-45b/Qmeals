@@ -24,7 +24,6 @@ services:
     environment:
       RAILS_ENV: development # Railsの環境を指定
       NODE_ENV: development # Node.jsの環境を指定
-
 volumes:
   postgresql-data:
     driver: local
