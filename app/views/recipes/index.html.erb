@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to 'レシピ投稿', new_recipe_path, class: 'btn btn-success mt-3' %>
+  <%= link_to 'レシピ投稿', new_recipe_path, class: 'btn-brown mt-3' %>
   <div class="search-form">
     <%= render 'search_form' %>
   </div>
@@ -16,7 +16,7 @@
         <%= render 'destroy', recipe: recipe %>
       </div>
       <% recipe.recipe_tags.each do |tag| %>
-        <div class="btn btn-success mb-3 mt-3"><%= tag.name %></div>
+        <div class="btn-brown mb-3 mt-3"><%= tag.name %></div>
       <% end %>
       <div class="recipe_information">
         <%= link_to recipe_path(recipe) do %>

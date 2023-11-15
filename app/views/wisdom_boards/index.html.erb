@@ -1,5 +1,5 @@
 <div class="container">
-  <%= link_to '投稿ボタン', new_wisdom_board_path, class: 'btn btn-success mt-3' %>
+  <%= link_to '投稿ボタン', new_wisdom_board_path, class: 'btn-brown mt-3' %>
   <div class="search-form">
     <%= render 'search_form' %>
   </div>
@@ -16,7 +16,7 @@
         <%= render 'destroy', wisdom_board: wisdom_board %>
       </div>
       <% wisdom_board.wisdom_tags.each do |tag| %>
-        <div class="btn btn-success mb-3 mt-3"><%= tag.name %></div>
+        <div class="btn-brown mb-3 mt-3"><%= tag.name %></div>
       <% end %>
       <div class="wisdom_information">
         <%= link_to wisdom_board_path(wisdom_board) do %>
