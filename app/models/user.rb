@@ -24,6 +24,9 @@ class User < ApplicationRecord
   has_many :favorite_wisdom_wisdoms, through: :favorite_wisdoms, source: :wisdom_board
   has_many :wisdom_comments, dependent: :destroy
 
+  has_many :authentications, dependent: :destroy
+  accepts_nested_attributes_for :authentications
+
   def own?(object)
     id == object&.user_id
   end

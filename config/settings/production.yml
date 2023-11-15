@@ -1,3 +1,5 @@
 default_url_options:
   protocol: "https"
   host: "qmeals-app.onrender.com"
+sorcery:
+  google_callback_url: 'https://qmeals-app.onrender.com/oauth/callback?provider=google'
