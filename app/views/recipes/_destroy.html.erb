@@ -1,5 +1,5 @@
 <% if current_user == recipe.user %>
     <%= link_to recipe_path(recipe), method: :delete, data: { turbo_method: :delete, turbo_confirm: "本当に削除しますか？" } do %>
-        <div class="btn btn-outline-success">削除</div>
+        <div class="btn-brown">削除</div>
     <% end %>
 <% end %>

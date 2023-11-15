@@ -1,11 +1,12 @@
 <div class="container">
   <div class="flex-container">
-    <% if current_user&.wisdom_board_favorite?(@wisdom_board) %>
-      <%= render 'favorite_wisdoms/wisdom_unfavorite', wisdom_board: @wisdom_board %>
-    <% else %>
-      <%= render 'favorite_wisdoms/wisdom_favorite', wisdom_board: @wisdom_board %>
-    <% end %>
-
+    <div class="mt-2">
+      <% if current_user&.wisdom_board_favorite?(@wisdom_board) %>
+        <%= render 'favorite_wisdoms/wisdom_unfavorite', wisdom_board: @wisdom_board %>
+      <% else %>
+        <%= render 'favorite_wisdoms/wisdom_favorite', wisdom_board: @wisdom_board %>
+      <% end %>
+    </div>
     <h3 class="wisdom_board mt-3"><%= "タイトル：#{@wisdom_board.title}" %></h3>
   </div>
 
@@ -29,8 +30,8 @@
 
   <div class="wisdom-main">
     <% @wisdom_board.wisdom_photos.each_with_index do |photo, index| %>
-      <h3><%= "知恵袋の説明#{index + 1}" %></h3>
-      <p><%= photo.description %></p>
+      <h3><%=  %></h3>
+      <p><%= "#{index + 1} #{photo.description}" %></p>
     <% end %>
   </div>
 

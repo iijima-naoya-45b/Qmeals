@@ -1,5 +1,5 @@
 <% if current_user == wisdom_board.user %>
-    <%= link_to wisdom_board_path(wisdom_board), method: :delete, data: { turbo_method: :delete, turbo_confirm: "本当に削除してもよろしいですか？" }, class: "btn btn-outline-success mb-5", remote: true do %>
+    <%= link_to wisdom_board_path(wisdom_board), method: :delete, data: { turbo_method: :delete, turbo_confirm: "本当に削除してもよろしいですか？" }, class: "btn-brown mb-5", remote: true do %>
         削除
     <% end %>
 <% end %>
