@@ -4,6 +4,10 @@ Rails.application.routes.draw do
 
   resources :users, only: %i[new create]
 
+  post "oauth/callback", to: "oauths#callback"
+  get "oauth/callback", to: "oauths#callback"
+  get "oauth/:provider", to: "oauths#oauth", as: :auth_at_provider
+
   get 'login', to: 'user_sessions#new'
   post 'login', to: 'user_sessions#create'
   delete 'logout', to: 'user_sessions#destroy'
@@ -32,5 +36,5 @@ Rails.application.routes.draw do
   end
   resources :favorite_wisdoms, only: %i[index create destroy]
 
-  resources :contacts, only: %i[new create complete]
+  resources :contacts, only: %i[new create complete]  
 end
