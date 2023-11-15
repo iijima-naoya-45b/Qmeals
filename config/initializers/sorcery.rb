@@ -219,12 +219,12 @@ Rails.application.config.sorcery.configure do |config|
   # config.salesforce.scope = "full"
   # config.salesforce.user_info_mapping = {:email => "email"}
 
-  config.line.key = ENV['LINE_KEY']
-  config.line.secret = ENV['LINE_SECRET'] 
-  config.line.callback_url = ENV['LINE_CALLBACK_URL']
-  config.line.scope = "profile email"
-  config.line.bot_prompt = "normal"
-  config.line.user_info_mapping = {name: 'displayName', email: 'email'}
+  #config.line.key = ENV['LINE_KEY']
+  #config.line.secret = ENV['LINE_SECRET'] 
+  #config.line.callback_url = ENV['LINE_CALLBACK_URL']
+  #config.line.scope = "profile openid email"
+  #config.line.bot_prompt = "normal"
+  #config.line.user_info_mapping = {name: 'displayName', email: 'email'}
 
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
