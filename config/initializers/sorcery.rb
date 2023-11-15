@@ -224,7 +224,7 @@ Rails.application.config.sorcery.configure do |config|
   config.line.callback_url = ENV['LINE_CALLBACK_URL']
   config.line.scope = "profile"
   config.line.bot_prompt = "normal"
-  config.line.user_info_mapping = {name: 'name', email: 'email'}
+  config.line.user_info_mapping = {name: 'displayName', email: 'userId'}
 
   # For information about Discord API
   # https://discordapp.com/developers/docs/topics/oauth2
