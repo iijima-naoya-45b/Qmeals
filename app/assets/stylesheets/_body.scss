@@ -57,11 +57,6 @@
     color: #593030;
 }
 
-.alert.alert-success {
-    background-color: #FFA500;
-    color: #ffffff;
-}
-
 .index {
     font-size: 24px;
     font-weight: bold;
@@ -86,11 +81,11 @@
 .topics {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* 要素を2列に配置 */
+    justify-content: space-between;
 }
 
 .topics > div {
-    width: 48%; /* 各要素の横幅を調整 */
+    width: 48%;
 }
 
 .break-all {
@@ -110,11 +105,12 @@ img {
 }
 
 .brown-script{
-    color: #8B4513;
+    color: #593030;
     text-decoration: none;
     font-weight: bold;
 }
 
 .sub-back-ground {
     background-color: #FFEEC1;
+    margin: auto;
 }

@@ -4,7 +4,7 @@ class WisdomBoardsController < ApplicationController
 
   def index
     @wisdom_boards = WisdomBoard.includes(:user).filtered_search(params[:title],
-                                                                 params[:tag]).order(created_at: :desc).page(params[:page])
+                                                                params[:tag]).order(created_at: :desc).page(params[:page])
   end
 
   def show
@@ -30,7 +30,7 @@ class WisdomBoardsController < ApplicationController
 
   def destroy
     @wisdom_board.destroy!
-    redirect_to wisdom_boards_path, danger: '料理の知恵袋の削除に成功しました.'
+    redirect_to wisdom_boards_path, danger: '料理の知恵袋の削除に成功しました'
   end
 
   def favorite_wisdoms

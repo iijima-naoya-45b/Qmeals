@@ -9,7 +9,7 @@ class ContactsController < ApplicationController
       ContactMailer.contact_mail(@contact).deliver
       redirect_to root_path, flash: { success: 'お問い合わせに成功しました' }
     else
-      flash.now[:danger] = "お問い合わせに失敗しました"
+      flash.now[:danger] = 'お問い合わせに失敗しました'
       render :new, status: :unprocessable_entity
     end
   end
