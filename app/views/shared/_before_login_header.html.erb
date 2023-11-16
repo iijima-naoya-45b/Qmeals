@@ -1,9 +1,11 @@
 <div id="before_header">
     <div class="top_information">
-    <%= link_to root_path, class: 'header-link brown-script' do %>
-    <%= image_tag 'dish.svg' %>
-        <span>Qmeals</span>
-    <% end %>
+        <div class="right-header">
+            <%= link_to root_path, class: 'header-link brown-script' do %>
+            <%= image_tag 'dish.svg' %>
+                <span>Qmeals</span>
+            <% end %>
+        </div>
         <div class="right-header">
             <%= link_to 'ユーザー登録', new_user_path, class: 'btn-brown' %>
             <%= link_to 'ログイン', login_path, class: 'btn-brown' %>
@@ -11,24 +13,19 @@
     </div>
 
     <div class="middle_information">
-    <%= link_to recipes_path, class: 'header-link text-brown' do %>
-        <%= image_tag 'pod.svg' %>
+    <%= link_to recipes_path, class: 'brown-script' do %>
         <span>お手軽レシピ</span>
     <% end %>
-    <%= link_to wisdom_boards_path, class: 'header-link text-brown' do %>
-        <%= image_tag 'wisdom.svg' %>
+    <%= link_to wisdom_boards_path, class: 'brown-script' do %>
         <span>料理の知恵</span>
     <% end %>
-    <%= link_to shop_lists_path, class: 'header-link text-brown' do %>
-        <%= image_tag 'bag.svg' %>
+    <%= link_to shop_lists_path, class: 'brown-script' do %>
         <span>お買い物リスト</span>
     <% end %>
-    <%= link_to edamams_path, class: 'header-link text-brown' do %>
-        <%= image_tag 'edamams.svg' %>
+    <%= link_to edamams_path, class: 'brown-script' do %>
         <span>海外のレシピ</span>
     <% end %>
-    <%= link_to login_path, class: 'header-link text-brown' do %>
-        <%= image_tag 'star.svg' %>
+    <%= link_to login_path, class: 'brown-script' do %>
         <span>お気に入り</span>
     <% end %>
     </div>

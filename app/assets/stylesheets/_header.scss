@@ -20,17 +20,19 @@
   display: flex;
   align-items: center;
   margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .right_header {
   display: flex;
   justify-content: space-between;
-  width: 400px;
-  height: 80px;
+  width: 30%;
+  height: 100%;
 }
 
 .right_header > * {
-  margin-left: 10px;
+  align-self: flex-end;
   margin-right: 10px;
 }
 

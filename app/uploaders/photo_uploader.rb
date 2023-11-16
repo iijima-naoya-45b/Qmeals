@@ -15,7 +15,7 @@ class PhotoUploader < CarrierWave::Uploader::Base
     'top_recipe.svg'
   end
 
-  process resize_to_fill: [200, 200]
+  process resize_to_fill: [800, 600]
 
   process :optimize
 

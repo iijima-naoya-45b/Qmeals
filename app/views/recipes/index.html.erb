@@ -12,7 +12,7 @@
           <% else %>
             <%= render 'favorite_recipes/recipe_favorite', { recipe: recipe } %>
           <% end %>
-        <h3 class="ml-3"><%= link_to recipe.title, recipe_path(recipe), class: 'header-link' %></h3>
+        <h3 class="ml-3"><%= link_to recipe.title, recipe_path(recipe), class: 'brown-script' %></h3>
         <%= render 'destroy', recipe: recipe %>
       </div>
       <% recipe.recipe_tags.each do |tag| %>

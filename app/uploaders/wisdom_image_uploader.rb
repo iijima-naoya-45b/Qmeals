@@ -15,7 +15,7 @@ class WisdomImageUploader < CarrierWave::Uploader::Base
     'top_wisdom.svg'
   end
 
-  process resize_to_fill: [200, 200]
+  process resize_to_fill: [200, 600]
 
   process :optimize
 
