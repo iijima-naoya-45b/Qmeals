@@ -3,7 +3,7 @@
   <%= "コメント: #{recipe_comment.body}" %>
   <% if current_user.own?(recipe_comment) %>
     <%= link_to recipe_comment_path(recipe_comment), data: {turbo_method: :delete, turbo_confirm: 'コメントを削除しますか？'} do %>
-      <div class="btn btn-outline-success">削除</div>
+      <div class="btn-brown">削除</div>
     <% end %>
   <% end %>
 </div>

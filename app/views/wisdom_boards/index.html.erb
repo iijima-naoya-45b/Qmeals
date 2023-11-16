@@ -12,7 +12,7 @@
           <% else %>
             <%= render 'favorite_wisdoms/wisdom_favorite', {wisdom_board: wisdom_board} %>
           <% end %>
-        <h3 class="ml-3"><%= link_to wisdom_board.title, wisdom_board_path(wisdom_board), class: 'header-link' %></h3>
+        <h3 class="ml-3"><%= link_to wisdom_board.title, wisdom_board_path(wisdom_board), class: 'brown-script' %></h3>
         <%= render 'destroy', wisdom_board: wisdom_board %>
       </div>
       <% wisdom_board.wisdom_tags.each do |tag| %>

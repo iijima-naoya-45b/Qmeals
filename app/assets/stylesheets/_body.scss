@@ -52,12 +52,9 @@
     color: #333;
     margin-top: 30px;
     margin-bottom: 30px;
-    font-family: Kosugi Maru, sans-serif;
-}
-
-.alert.alert-success {
-    background-color: #FFA500;
-    color: #ffffff;
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+    font-weight: bold;
+    color: #593030;
 }
 
 .index {
@@ -84,11 +81,11 @@
 .topics {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between; /* 要素を2列に配置 */
+    justify-content: space-between;
 }
 
 .topics > div {
-    width: 48%; /* 各要素の横幅を調整 */
+    width: 48%;
 }
 
 .break-all {
@@ -105,4 +102,15 @@ img {
 .brown-text {
     color: #8B4513;
     text-decoration: underline;
+}
+
+.brown-script{
+    color: #593030;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.sub-back-ground {
+    background-color: #FFEEC1;
+    margin: auto;
 }

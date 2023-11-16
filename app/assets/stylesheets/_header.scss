@@ -5,7 +5,7 @@
   position: sticky;
   top: 0;
   z-index: 2;
-  font-family: Kosugi Maru, sans-serif;
+  font-family: 'Trebuchet MS', sans-serif;
 }
 
 .top_information {
@@ -20,17 +20,19 @@
   display: flex;
   align-items: center;
   margin-left: 10px;
+  margin-top: 10px;
+  margin-bottom: 10px;
 }
 
 .right_header {
   display: flex;
   justify-content: space-between;
-  width: 400px;
-  height: 80px;
+  width: 30%;
+  height: 100%;
 }
 
 .right_header > * {
-  margin-left: 10px;
+  align-self: flex-end;
   margin-right: 10px;
 }
 
@@ -50,6 +52,7 @@
 
 .header-link {
   color: #593030;
+  font-weight: bold;
 }
 
 .btn-brown {

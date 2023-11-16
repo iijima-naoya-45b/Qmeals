@@ -3,7 +3,7 @@
   <%= "コメント内容: #{wisdom_comment.comment}" %>
   <% if current_user&.own?(wisdom_comment) %>
     <%= link_to wisdom_comment_path(wisdom_comment), data: {turbo_method: :delete, turbo_confirm: "コメントを削除しますか？" } do %>
-      <div class="btn btn-outline-success">削除</div>
+      <div class="btn-brown">削除</div>
     <% end %>
   <% end %>
 </div>

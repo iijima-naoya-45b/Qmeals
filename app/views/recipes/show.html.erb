@@ -1,10 +1,12 @@
 <div class="container">
   <div class="flex-container">
+    <div class = "mt-2">
       <% if current_user&.recipe_favorite?(@recipe) %>
         <%= render 'favorite_recipes/recipe_unfavorite', {recipe: @recipe} %>
       <% else %>
         <%= render 'favorite_recipes/recipe_favorite', { recipe: @recipe } %>
       <% end %>
+    </div>
     <h3 class="recipe-title mt-3"><%= "タイトル：#{@recipe.title}" %></h3>
   </div>
 
@@ -21,6 +23,9 @@
           <%= recipe_ingredient.name %>
         </td>
         <td style="width: 300px;">
+          <%= recipe_ingredient.unit.unit %>
+        </td>
+        <td style="width: 300px;">
           <% if @recipe.add_shopping_list_items(current_user).include?(recipe_ingredient.name) %>
             <%= button_tag '追加済み', class: 'btn btn-secondary', type: 'button', disabled: true %>
           <% else %>
@@ -29,8 +34,6 @@
               <%= f.submit '買い物リストに追加', class: 'btn-brown' %>
             <% end %>
           <% end %>
-        <td style="width: 300px;">
-          <%= recipe_ingredient.unit.unit %>
         </td>
       </tr>
     </tbody>
@@ -54,8 +57,7 @@
   <div class="recipe-main">
     <% @recipe.recipe_photos.each_with_index do |recipe_photo, index| %>
       <div class="break-all mt-2 mb-2">
-        <h3><%= "レシピの説明#{index + 1}" %></h3>
-        <%= recipe_photo.description %>
+        <p><%= "#{index + 1}""#{recipe_photo.description}" %></p>
       </div>
     <% end %>
   </div>
