@@ -1,34 +1,35 @@
 <div id="before_header">
     <div class="top_information">
-        <div class="left_header">
-            <%= link_to root_path do %>
-                <%= image_tag 'dish.svg' %>
-            <% end %>
-        </div>
-        <div class="right_header">
-                <%= link_to 'ユーザー登録', new_user_path, class: 'btn-brown mt-3 mb-4' %>
-                <%= link_to 'ログイン', login_path, class: 'btn-brown mt-3 mb-4' %>
+    <%= link_to root_path, class: 'header-link brown-script' do %>
+    <%= image_tag 'dish.svg' %>
+        <span>Qmeals</span>
+    <% end %>
+        <div class="right-header">
+            <%= link_to 'ユーザー登録', new_user_path, class: 'btn-brown' %>
+            <%= link_to 'ログイン', login_path, class: 'btn-brown' %>
         </div>
     </div>
+
     <div class="middle_information">
-        <%= link_to shop_lists_path, class: 'header-link text-brown' do %>
-            <%= image_tag 'bag.svg' %>
-            <span>お買い物リスト</span>
-        <% end %>
-        <%= link_to recipes_path, class: 'header-link text-brown' do %>
-            <%= image_tag 'pod.svg' %>
-            <span>レシピ</span>
-        <% end %>
-        <%= link_to wisdom_boards_path, class: 'header-link text-brown' do %>
-            <%= image_tag 'wisdom.svg' %>
-            <span>料理の知恵</span>
-        <% end %>
-        <%= link_to edamams_path, class: 'header-link text-brown' do %>
-            <%= image_tag 'edamams.svg' %>
-            <span>海外のレシピ</span>
-        <% end %>
-        <%= link_to login_path, class: 'header-link text-brown' do %>
-            <%= image_tag 'star.svg' %><span>お気に入りリスト</span>
-        <% end %>
+    <%= link_to recipes_path, class: 'header-link text-brown' do %>
+        <%= image_tag 'pod.svg' %>
+        <span>お手軽レシピ</span>
+    <% end %>
+    <%= link_to wisdom_boards_path, class: 'header-link text-brown' do %>
+        <%= image_tag 'wisdom.svg' %>
+        <span>料理の知恵</span>
+    <% end %>
+    <%= link_to shop_lists_path, class: 'header-link text-brown' do %>
+        <%= image_tag 'bag.svg' %>
+        <span>お買い物リスト</span>
+    <% end %>
+    <%= link_to edamams_path, class: 'header-link text-brown' do %>
+        <%= image_tag 'edamams.svg' %>
+        <span>海外のレシピ</span>
+    <% end %>
+    <%= link_to login_path, class: 'header-link text-brown' do %>
+        <%= image_tag 'star.svg' %>
+        <span>お気に入り</span>
+    <% end %>
     </div>
 </div>

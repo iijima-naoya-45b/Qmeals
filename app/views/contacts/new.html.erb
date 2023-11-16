@@ -1,19 +1,21 @@
 <div class="container">
-  <h1>お問い合わせ</h1>
+  <h1 class="text-center">お問い合わせ</h1>
   <%= form_with model: @contact do |f| %>
     <%= render 'shared/error_messages', object: f.object %>
-    <div calss="contact-form">
+    <div class="contact-form mt-4">
       <%= f.label :name %><span class="text-danger">（必須）</span>
       <%= f.text_field :name, class: 'form-control', placeholder: 'お名前を入力してください' %>
     </div>
-    <div calss="contact-form">
+    <div class="contact-form mt-4">
       <%= f.label :email %><span class="text-danger">（必須）</span>
       <%= f.text_field :email, class: 'form-control', placeholder: 'メールアドレスを入力してください' %>
     </div>
-    <div calss="contact-form">
+    <div class="contact-form mt-4">
       <%= f.label :message %><span class="text-danger">（必須）</span>
       <%= f.text_area :message, class: 'form-control', placeholder: 'お問い合わせ内容を入力してください' %>
     </div>
+    <div class="text-center mt-5">
       <%= f.submit '送信', class: 'btn-brown' %>
+    </div>
   <% end %>
 </div>

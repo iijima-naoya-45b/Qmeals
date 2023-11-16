@@ -2,7 +2,6 @@ body {
     display: flex;
     flex-direction: column;
     min-height: 100vh;
-    font-family: 'Trebuchet MS', sans-serif;
 }
 
 .container {
@@ -16,7 +15,8 @@ body {
     padding-top: 10px;
     margin-top: auto;
     bottom: 0;
-  }
+    font-family: 'M PLUS Rounded 1c', sans-serif;
+}
 
 .footer-container {
     text-align: center;
