@@ -14,7 +14,7 @@
 
   <%= render 'destroy', wisdom_board: @wisdom_board %>
 
-  <div class="wisdom-main">
+  <div class="wisdom-main sub-back-ground">
     <div class="btn-group" role="group" aria-label="Recipe Tags">
       <% @wisdom_board.wisdom_tags.each do |wisdom_tag| %>
         <div class="btn-wrapper">
@@ -28,7 +28,7 @@
     </div>
   </div>
 
-  <div class="wisdom-main">
+  <div class="wisdom-main sub-back-ground">
     <% @wisdom_board.wisdom_photos.each_with_index do |photo, index| %>
       <h3><%=  %></h3>
       <p><%= "#{index + 1} #{photo.description}" %></p>

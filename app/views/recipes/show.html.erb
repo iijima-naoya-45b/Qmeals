@@ -40,7 +40,7 @@
   </table>
 <% end %>
 
-  <div class="recipe-main">
+  <div class="recipe-main sub-back-ground">
     <div class="btn-group" role="group" aria-label="Recipe Tags">
     <% @recipe.recipe_tags.each do |recipe_tag| %>
       <div class="btn-wrapper">
@@ -54,7 +54,7 @@
     </div>
   </div>
 
-  <div class="recipe-main">
+  <div class="recipe-main sub-back-ground">
     <% @recipe.recipe_photos.each_with_index do |recipe_photo, index| %>
       <div class="break-all mt-2 mb-2">
         <p><%= "#{index + 1}""#{recipe_photo.description}" %></p>
@@ -68,4 +68,4 @@
     <%= render @comments %>
   </div>
 </div>
-<%= link_to '一覧に戻る', recipes_path, class: 'Outer-Flex-Text mb-3' %>
+<%= link_to '一覧に戻る', recipes_path, class: 'text-center brown-text mb-3' %>
