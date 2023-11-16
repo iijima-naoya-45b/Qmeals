@@ -73,3 +73,8 @@ ja:
             attributes:
               comment:
                 blank: "入力してください"
+          contact:
+            blank: "入力してください"
+            attributes:
+              email:
+                invalid: "使用できません"
