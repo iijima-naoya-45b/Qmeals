@@ -25,7 +25,7 @@ class RecipeForm
 
     ActiveRecord::Base.transaction do
       recipe = Recipe.create(title: @title, content: @content, cooking_time: @cooking_time, photo: @photo,
-                             user_id: @user.id)
+                            user_id: @user.id)
       recipe.recipe_tags = tag_names.map { |name| RecipeTag.find_or_create_by(name:) }
 
       @ingredients_attributes.each do |_, ingredient_params|
