@@ -1,14 +1,18 @@
 <div class="container">
     <div class="row">
         <div class=" col-md-10 offset-md-1 col-lg-8 offset-lg-2">
-            <h1>パスワードリセット申請</h1>
-            <%= form_with url:password_resets_path,method: :post,local: true do |f|%>
-                <div class="form-group">
-                    <%=f.label :email, User.human_attribute_name(:email)%>
-                    <%=f.text_field :email,class: "form-control", placeholder: "メールアドレスを入力してください" %>
+            <h1 class="text-center">パスワードリセット申請</h1>
+                <div class="sub-back-ground" style="height: 514px;">
+                    <%= form_with url:password_resets_path,method: :post,local: true do |f|%>
+                        <div class="form-group">
+                            <%=f.label :email, User.human_attribute_name(:email)%>
+                            <%=f.text_field :email,class: "form-control", placeholder: "メールアドレスを入力してください" %>
+                        </div>
+                        <div class='text-center mt-5'>
+                            <%= f.submit "送信", class: "btn-brown" %>
+                        </div>
+                    <%end%>
                 </div>
-                <%=f.submit "送信",class:"btn-brown"%>
-            <%end%>
         </div>
     </div>
 </div>

@@ -1,13 +1,13 @@
 <div id="before_header">
     <div class="top_information">
-        <div class="right-header">
+        <div class="left-header">
             <%= link_to root_path, class: 'header-link brown-script' do %>
-            <%= image_tag 'dish.svg' %>
-                <span>Qmeals</span>
+                <%= image_tag 'dish.svg' %>
+                <span style="font-size: 30px; color: white;">Qmeals</span>
             <% end %>
         </div>
         <div class="right-header">
-            <%= link_to 'ユーザー登録', new_user_path, class: 'btn-brown' %>
+            <%= link_to '新規登録', new_user_path, class: 'btn-brown' %>
             <%= link_to 'ログイン', login_path, class: 'btn-brown' %>
         </div>
     </div>

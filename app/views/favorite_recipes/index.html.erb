@@ -5,10 +5,12 @@
     <div class="favorite-recipe">
       <div style="display: flex; align-items: center;">
         <%= render 'recipe_unfavorite', {recipe: recipe} %>
-        <h3 style="margin-left: 10px;"><%= link_to recipe.title, recipe_path(recipe), class: 'header-link' %></h3>
+        <h3 style="margin-left: 10px;"><%= link_to recipe.title, recipe_path(recipe), class: 'brown-script' %></h3>
       </div>
       <% recipe.recipe_tags.each do |tag| %>
-        <span class="btn-brown"><%= tag.name %></span>
+        <span>
+          <div class="btn-brown-script"><%= tag.name %></div>
+        </span>
       <% end %>
       <p style="margin-top: 10px;">
           <%= link_to recipe_path(recipe) do %>
