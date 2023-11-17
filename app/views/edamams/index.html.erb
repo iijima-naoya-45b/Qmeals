@@ -1,7 +1,7 @@
 <div class="container">
   <h1>海外のレシピ検索</h1>
   <%= form_with(url: edamams_path, method: :get, class: "search-form") do |f| %>
-    <%= f.text_field :search, placeholder: "英語名で検索してください" %>
+    <%= f.text_field :search, placeholder: "英語名で検索してください", class: 'form-control' %>
     <%= f.submit '検索する', class: "btn-brown" %>
   <% end %>
 </div>
@@ -13,10 +13,10 @@
         <% recipes.each do |recipe| %>
           <div class="col-md-4 recipe-item">
             <div class="recipe-details">
-              <%= link_to recipe["recipe"]["label"], recipe["recipe"]["url"], class: "recipe-title" %>
+              <%= link_to recipe["recipe"]["label"], recipe["recipe"]["url"], class: "brown-text" %>
               <p><%= number_with_precision(recipe["recipe"]["calories"], precision: 2) %>cal</p>
             </div>
-            <%= image_tag recipe["recipe"]["image"], class: "recipe-image" %>
+            <%= image_tag recipe["recipe"]["image"], class: "recipe-image mb-1", style: "width:100%; height:auto;" %>
           </div>
         <% end %>
       </div>

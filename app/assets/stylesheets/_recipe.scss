@@ -79,3 +79,16 @@
   display: inline-block; /* ボタンを横に並べる */
   margin-right: 10px; /* ボタン間の間隔を調整（必要に応じて変更） */
 }
+
+.btn-brown-script {
+  color: #ffffff;
+  background-color: #593030;
+  border: 2px solid #593030;
+  border-radius: 20px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  cursor: pointer;
+}

@@ -1,5 +1,5 @@
 <div class="container">
-    <h2 class="alert alert-success">Qmealsとは？</h2>
+    <h2 class="brown-title">Qmealsとは？</h2>
     <div class="description">
         <h3 class="index">機能の紹介</h3>
         <ol class="index-list">
@@ -20,28 +20,28 @@
         </div>
         <div class="topics">
                 <div class="bottom-space">
-                    <h3 class="alert alert-success">1.レシピの説明について</h3>
+                    <h3 class="brown-title">1.レシピの説明について</h3>
                     <p>時短に特化したアプリです。手軽なレシピ作りに挑戦・投稿してみましょう！！</p>
                     <%= link_to recipes_path do %>
                     <%= image_tag 'top_recipe.svg' %>
                     <% end %>
                 </div>
                 <div class="bottom-space">
-                    <h3 class="alert alert-success">2.料理の知恵袋について</h3>
+                    <h3 class="brown-title">2.料理の知恵袋について</h3>
                     <p>料理の知恵を身につけましょう。</p>
                     <%= link_to wisdom_boards_path do %>
                     <%= image_tag 'top_wisdom.svg', class: "mt-5" %>
                     <% end %>
                 </div>
                 <div class="bottom-space mt-3">
-                    <h3 class="alert alert-success">3.お買い物リストの登録</h3>
+                    <h3 class="brown-title">3.お買い物リストの登録</h3>
                     <p>レシピからそのままお買い物リストを作成し、いつでも買い物に行けるようにしましょう。</p>
                     <%= link_to shop_lists_path do %>
                     <%= image_tag 'top_shopping.svg' %>
                     <% end %>
                 </div>
                 <div class="bottom-space mt-3">
-                    <h3 class="alert alert-success">4.レシピの登録機能</h3>
+                    <h3 class="brown-title">4.レシピの登録機能</h3>
                     <p>いつでも見返せるようにレシピ・知恵袋をお気に入り登録しましょう</p>
                     <% if logged_in? %>
                         <%= link_to favorite_recipes_path do %>
@@ -54,7 +54,7 @@
                     <% end %>
                 </div>
                 <div class="bottom-space  mt-3">
-                    <h3 class="alert alert-success">5.海外のレシピ検索機能</h3>
+                    <h3 class="brown-title">5.海外のレシピ検索機能</h3>
                     <p>海外のレシピも調べてさらに知見を広げましょう！</p>
                     <%= link_to edamams_path do %>
                         <%= image_tag 'top-oversea.svg' %>

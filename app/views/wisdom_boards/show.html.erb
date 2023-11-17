@@ -14,24 +14,21 @@
 
   <%= render 'destroy', wisdom_board: @wisdom_board %>
 
-  <div class="wisdom-main">
+  <div class="wisdom-main sub-back-ground">
     <div class="btn-group" role="group" aria-label="Recipe Tags">
       <% @wisdom_board.wisdom_tags.each do |wisdom_tag| %>
-        <div class="btn-wrapper">
           <div class="btn-brown mb-3"><%= wisdom_tag.name %></div>
-        </div>
       <% end %>
     </div>
     <%= image_tag @wisdom_board.photo_url %>
-    <div class="break-all mt-2 mb-2">
+    <div class="break-all mt-2 mb-2 text-center">
       <%= @wisdom_board.content %>
     </div>
   </div>
 
-  <div class="wisdom-main">
+  <div class="wisdom-main sub-back-ground">
     <% @wisdom_board.wisdom_photos.each_with_index do |photo, index| %>
-      <h3><%=  %></h3>
-      <p><%= "#{index + 1} #{photo.description}" %></p>
+      <p><%= "#{index + 1}. #{photo.description}" %></p>
     <% end %>
   </div>
 
