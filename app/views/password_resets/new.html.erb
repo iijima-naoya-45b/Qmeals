@@ -5,7 +5,7 @@
             <%= form_with url:password_resets_path,method: :post,local: true do |f|%>
                 <div class="form-group">
                     <%=f.label :email, User.human_attribute_name(:email)%>
-                    <%=f.text_field :email,class: "form-control"%>
+                    <%=f.text_field :email,class: "form-control", placeholder: "メールアドレスを入力してください" %>
                 </div>
                 <%=f.submit "送信",class:"btn-brown"%>
             <%end%>

@@ -20,10 +20,10 @@
     <tbody>
       <tr>
         <td style="width: 300px;">
-          <%= recipe_ingredient.name %>
+          <div class="brown-script"><%= recipe_ingredient.name %></div>
         </td>
         <td style="width: 300px;">
-          <%= recipe_ingredient.unit.unit %>
+          <div class="brown-script"><%= recipe_ingredient.unit.unit %></div>
         </td>
         <td style="width: 300px;">
           <% if @recipe.add_shopping_list_items(current_user).include?(recipe_ingredient.name) %>
@@ -57,7 +57,7 @@
   <div class="recipe-main sub-back-ground">
     <% @recipe.recipe_photos.each_with_index do |recipe_photo, index| %>
       <div class="break-all mt-2 mb-2">
-        <p><%= "#{index + 1}""#{recipe_photo.description}" %></p>
+        <p><%= "#{index + 1}.#{recipe_photo.description}" %></p>
       </div>
     <% end %>
   </div>
