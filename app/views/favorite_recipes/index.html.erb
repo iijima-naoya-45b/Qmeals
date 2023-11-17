@@ -1,23 +1,25 @@
 <div class="container">
+  <h3><div class="text-center">レシピのお気に入り</div></h3>
   <%= render 'shared/favorites' %>
-  <div class="bottom-boarder"></div>
-  <% @favorite_recipes.each do |recipe| %>
-    <div class="favorite-recipe">
-      <div style="display: flex; align-items: center;">
-        <%= render 'recipe_unfavorite', {recipe: recipe} %>
-        <h3 style="margin-left: 10px;"><%= link_to recipe.title, recipe_path(recipe), class: 'brown-script' %></h3>
+  <div class="sub-back-ground">
+    <% @favorite_recipes.each do |recipe| %>
+      <div class="favorite-recipe">
+        <div style="display: flex; align-items: center;">
+          <%= render 'recipe_unfavorite', {recipe: recipe} %>
+          <h3 style="margin-left: 10px;"><%= link_to recipe.title, recipe_path(recipe), class: 'brown-script' %></h3>
+        </div>
+        <% recipe.recipe_tags.each do |tag| %>
+          <span>
+            <div class="btn-brown-script"><%= tag.name %></div>
+          </span>
+        <% end %>
+        <p style="margin-top: 10px;">
+            <%= link_to recipe_path(recipe) do %>
+            <%= image_tag recipe.photo_url %>
+            <% end %>
+        </p>
+        <div class="bottom-boarder"></div>
       </div>
-      <% recipe.recipe_tags.each do |tag| %>
-        <span>
-          <div class="btn-brown-script"><%= tag.name %></div>
-        </span>
-      <% end %>
-      <p style="margin-top: 10px;">
-          <%= link_to recipe_path(recipe) do %>
-          <%= image_tag recipe.photo_url %>
-          <% end %>
-      </p>
-      <div class="bottom-boarder"></div>
-    </div>
-  <% end %>
+    <% end %>
+  </div>
 </div>
