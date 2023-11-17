@@ -5,7 +5,7 @@
     <div class="favorite-wisdom-board">
       <div style="display: flex; align-items: center;">
         <%= render 'wisdom_unfavorite', {wisdom_board: wisdom_board} %>
-        <h3 class="ml-3"><%= link_to wisdom_board.title, wisdom_board_path(wisdom_board), class: 'header-link' %></h3>
+        <h3 class="ml-3"><%= link_to wisdom_board.title, wisdom_board_path(wisdom_board), class: 'brown-script' %></h3>
       </div>
       <% wisdom_board.wisdom_tags.each do |tag| %>
         <span class="btn-brown"><%= tag.name %></span>
