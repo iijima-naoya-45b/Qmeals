@@ -22,8 +22,13 @@ services:
     stdin_open: true # yarnコマンドの実行のために追加
     tty: true # yarnコマンドの実行のために追加
     environment:
+      SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub
       RAILS_ENV: development # Railsの環境を指定
       NODE_ENV: development # Node.jsの環境を指定
+  chrome:
+    image: seleniarm/standalone-chromium:latest
+    ports:
+      - 4444:4444
 volumes:
   postgresql-data:
     driver: local
