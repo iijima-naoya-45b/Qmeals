@@ -27,8 +27,10 @@ services:
       NODE_ENV: development # Node.jsの環境を指定
   chrome:
     image: seleniarm/standalone-chromium:latest
+    shm_size: 256m
     ports:
       - 4444:4444
+      
 volumes:
   postgresql-data:
     driver: local
