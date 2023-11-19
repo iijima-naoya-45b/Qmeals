@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "SignUps", type: :system do
+RSpec.describe 'SignUps', type: :system do
   describe 'errorサインアップ検証' do
     context 'フォーム未入力の場合' do
       let(:user) { create(:user) }
