@@ -1,6 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'UserSessions', type: :system do
+  let(:user) { create(:user) }
   describe 'ログイン前' do
     context 'フォームの入力値が未入力' do
       it 'ログイン処理が失敗' do
@@ -12,7 +13,6 @@ RSpec.describe 'UserSessions', type: :system do
     end
 
     context 'emailのフォーム値が異常' do
-      let(:user) { create(:user) }
       it 'ログイン処理が失敗' do
         visit login_path
         fill_in 'email', with: 'wrong@example.com'
@@ -24,7 +24,6 @@ RSpec.describe 'UserSessions', type: :system do
     end
 
     context 'passwordのフォーム値が異常' do
-      let(:user) { create(:user) }
       it 'ログイン処理が失敗' do
         visit login_path
         fill_in 'email', with: user.email
@@ -36,7 +35,6 @@ RSpec.describe 'UserSessions', type: :system do
     end
 
     context 'フォーム値が正常' do
-      let(:user) { create(:user) }
       it 'ログイン処理が成功' do
         login(user)
         expect(page).to have_content 'ログインに成功しました'
