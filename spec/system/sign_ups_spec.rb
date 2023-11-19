@@ -1,9 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe 'SignUps', type: :system do
-  describe 'errorサインアップ検証' do
+  let(:user) { create(:user) }
+  let(:success_user) { build(:user) }
+  describe 'サインアップ検証' do
     context 'フォーム未入力の場合' do
-      let(:user) { create(:user) }
       it 'サインアップが失敗' do
         visit new_user_path
         click_button '登録'
@@ -13,7 +14,6 @@ RSpec.describe 'SignUps', type: :system do
     end
 
     context 'nameが未入力の場合' do
-      let(:user) { create(:user) }
       it 'サインアップが失敗' do
         visit new_user_path
         fill_in 'user[name]', with: ''
@@ -27,7 +27,6 @@ RSpec.describe 'SignUps', type: :system do
     end
 
     context 'emailが同じの場合' do
-      let(:user) { create(:user) }
       it 'サインアップが失敗' do
         visit new_user_path
         fill_in 'user[name]', with: user.name
@@ -41,7 +40,6 @@ RSpec.describe 'SignUps', type: :system do
     end
 
     context 'emailが未入力の場' do
-      let(:user) { create(:user) }
       it 'サインアップが失敗' do
         visit new_user_path
         fill_in 'user[name]', with: user.name
@@ -55,7 +53,6 @@ RSpec.describe 'SignUps', type: :system do
     end
 
     context '全て合致する場合' do
-      let(:success_user) { build(:user) }
       it 'サインアップが成功' do
         visit new_user_path
         fill_in 'user[name]', with: success_user.name
@@ -65,6 +62,18 @@ RSpec.describe 'SignUps', type: :system do
         click_button '登録'
         expect(page).to have_content 'ユーザー登録に成功しました'
         expect(current_path).to eq login_path
+      end
+    end    
+  end
+
+  describe 'ログアウト検証' do
+    describe 'ログアウト押下時' do
+      it 'サインアウト成功' do
+        login(user)
+        click_button 'ログアウト'
+        page.driver.browser.switch_to.alert.accept
+        expect(page).to have_content 'ログアウトしました'
+        expect(current_path).to eq root_path
       end
     end
   end
