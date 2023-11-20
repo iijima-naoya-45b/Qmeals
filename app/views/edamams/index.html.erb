@@ -1,5 +1,9 @@
 <div class="container">
-  <h3 class="text-center">海外のレシピ検索</h3>
+  <div class="d-flex">
+    <h3 class="text-center">海外のレシピ検索</h3>
+    <div class="text-center"><%= render 'shared/how_to_edamams_api' %></div>
+  </div>
+  
   <%= form_with(url: edamams_path, method: :get, class: "search-form") do |f| %>
     <%= f.text_field :search, placeholder: "英語名で検索してください", class: 'form-control' %>
     <%= f.submit '検索する', class: "btn-brown" %>
@@ -12,7 +16,7 @@
         <% recipes.each do |recipe| %>
           <div class="col-md-4 recipe-item">
             <div class="recipe-details">
-              <%= link_to '海外の公式サイトへ', recipe["recipe"]["url"], class: "brown-text" %>
+              <%= link_to '海外公式サイトへ', recipe["recipe"]["url"], class: "brown-text" %>
               <%= content_tag :div, recipe["recipe"]["label"], class: "brown-script" %>
             </div>
             <%= image_tag recipe["recipe"]["image"], class: "recipe-image mb-1", style: "width:80%; height:80%;" %>
