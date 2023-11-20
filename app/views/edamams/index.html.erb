@@ -7,16 +7,15 @@
 </div>
 
 <% if @foods.present? && @foods["hits"].present? %>
-  <div class="recipe-container">
     <% @foods["hits"].first(12).each_slice(3) do |recipes| %>
       <div class="row">
         <% recipes.each do |recipe| %>
           <div class="col-md-4 recipe-item">
             <div class="recipe-details">
-              <%= link_to recipe["recipe"]["label"], recipe["recipe"]["url"], class: "brown-text" %>
-              <p><%= number_with_precision(recipe["recipe"]["calories"], precision: 2) %>cal</p>
+              <%= link_to '海外の公式サイトへ', recipe["recipe"]["url"], class: "brown-text" %>
+              <%= content_tag :div, recipe["recipe"]["label"], class: "brown-script" %>
             </div>
-            <%= image_tag recipe["recipe"]["image"], class: "recipe-image mb-1", style: "width:100%; height:auto;" %>
+            <%= image_tag recipe["recipe"]["image"], class: "recipe-image mb-1", style: "width:80%; height:80%;" %>
           </div>
         <% end %>
       </div>
