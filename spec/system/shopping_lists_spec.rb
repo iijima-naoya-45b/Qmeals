@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "ShoppingLists", type: :system do
+RSpec.describe 'ShoppingLists', type: :system do
   let!(:user) { create(:user) }
   let(:shopping_list) { build(:shopping_list) }
 
@@ -23,14 +23,14 @@ RSpec.describe "ShoppingLists", type: :system do
       end
     end
   end
-  
+
   describe 'ログイン後検証' do
     before do
       login(user)
     end
 
     context '商品・備考を打鍵した場合' do
-      it '正常に登録されること' do  
+      it '正常に登録されること' do
         visit shop_lists_path
         fill_in 'shopping_list[item]', with: shopping_list.item
         fill_in 'shopping_list[notes]', with: shopping_list.notes

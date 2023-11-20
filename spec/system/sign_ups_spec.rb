@@ -63,7 +63,7 @@ RSpec.describe 'SignUps', type: :system do
         expect(page).to have_content 'ユーザー登録に成功しました'
         expect(current_path).to eq login_path
       end
-    end    
+    end
   end
 
   describe 'ログアウト検証' do
