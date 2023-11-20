@@ -60,7 +60,12 @@
         </div>
         <div class="bottom-space mt-3">
             <h3 class="brown-title">5.海外のレシピ検索機能</h3>
-            <p>海外のレシピも調べてさらに知見を広げましょう。</p>
+            <div class="col-12">
+                <div class="d-flex">
+                    <%= render 'shared/how_to_edamams_api' %>
+                    <p>海外のレシピも調べてさらに知見を広げましょう。</p>
+                </div>
+            </div>
             <%= link_to edamams_path do %>
                 <%= image_tag 'top-oversea.svg' %>
             <% end %>

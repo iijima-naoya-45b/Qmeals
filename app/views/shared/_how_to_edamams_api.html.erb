@@ -1,0 +1,29 @@
+<%= link_to '#', data: { bs_toggle: "modal", bs_target: "#edamamModal" }, class: "text-decoration-none text-reset" do %>
+    <h6 class="mt-2 mb-4 ">
+      <%= image_tag 'question.svg' %>
+    </h6>
+  <% end %>
+
+  <div class="modal fade" id="edamamModal" tabindex="-1" aria-labelledby="edamamModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="edamamModalLabel">海外のレシピ検索機能</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>※海外サイトに飛ぶので、日本語翻訳を推奨しています。</p>
+        <div class= "boarder-bootom mb-3"></div>
+        <p>手順①.海外公式サイトへをクリック</p>
+        <div class= "boarder-bootom mb-3"></div>
+        <%= image_tag 'how_to_api1.png', size: '640x360', class: 'img-fluid mb-3' %>
+        <p>手順②.右クリックで翻訳から「日本語を選択」</p>
+        <div class= "boarder-bootom mb-3"></div>
+        <%= image_tag 'how_to_api2.png', size: '640x360', class: 'img-fluid mb-3' %>
+        <p>手順③.あとはレシピ通りに作成してみましょう！</p>
+        <div class= "boarder-bootom mb-3"></div>
+        <%= image_tag 'how_to_api3.png', size: '640x360', class: 'img-fluid mb-3' %>
+      </div>
+    </div>
+  </div>
+</div>
