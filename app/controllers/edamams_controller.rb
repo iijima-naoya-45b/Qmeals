@@ -31,9 +31,6 @@ class EdamamsController < ApplicationController
       target_lang: "EN"
     }
 
-    client.ssl_config.clear_cert_store
-    client.ssl_config.set_trust_ca("/etc/ssl/certs")
-    
     response = client.get(uri, query: params)
     parsed_response = JSON.parse(response.body)
 
