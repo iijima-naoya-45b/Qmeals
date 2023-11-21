@@ -90,6 +90,10 @@ gem 'piet'
 
 gem 'google-analytics-rails'
 
+gem 'deepl-rb', require: 'deepl'
+
+gem 'rest-client'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'capybara'

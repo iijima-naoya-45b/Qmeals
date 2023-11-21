@@ -5,7 +5,7 @@
   </div>
   
   <%= form_with(url: edamams_path, method: :get, class: "search-form") do |f| %>
-    <%= f.text_field :search, placeholder: "英語名で検索してください", class: 'form-control' %>
+    <%= f.text_field :search, placeholder: "食材で検索してください", class: 'form-control' %>
     <%= f.submit '検索する', class: "btn-brown" %>
   <% end %>
 </div>
