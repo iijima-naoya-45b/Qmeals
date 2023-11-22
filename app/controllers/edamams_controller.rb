@@ -14,6 +14,7 @@ class EdamamsController < ApplicationController
     client = HTTPClient.new
     res = client.get("https://api.edamam.com/api/recipes/v2?type=public&q=#{CGI.escape(translated_query)}&app_id=#{ENV.fetch('application_id', nil)}&app_key=#{ENV.fetch('application_keys', nil)}")
     @foods = JSON.parse(res.body)
+    Rails.logger.info(@foods)
     
   end
 
