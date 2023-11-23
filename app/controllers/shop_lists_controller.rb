@@ -9,7 +9,7 @@ class ShopListsController < ApplicationController
   def create
     @shoppinglist = ShoppingList.new(shoppinglist_params)
     if @shoppinglist.save
-      redirect_to shop_lists_path, success: '追加しました'
+      redirect_to shop_lists_path, success: 'お買い物リストを作成しました'
     else
       flash.now[:danger] = t('defaults.flash_message.not_created', item: ShoppingList.model_name.human)
       render :index, status: :unprocessable_entity

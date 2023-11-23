@@ -1,14 +1,15 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title><%= page_title(yield(:title)) %></title>
-    <title>Myapp</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title><%= page_title(yield(:title)) || "Myapp" %></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
     <%= favicon_link_tag 'icon.svg' %>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-E6CXQFQ61R"></script>
     <script>
       window.dataLayer = window.dataLayer || [];

@@ -22,8 +22,14 @@ services:
     stdin_open: true
     tty: true
     environment:
+      SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub
       RAILS_ENV: development
       NODE_ENV: development
+  chrome:
+    image: seleniarm/standalone-chromium:latest
+    shm_size: 256m
+    ports:
+      - 4444:4444
 volumes:
   postgresql-data:
     driver: local

@@ -15,7 +15,7 @@
         <% end %>
         <p style="margin-top: 10px;">
             <%= link_to recipe_path(recipe) do %>
-            <%= image_tag recipe.photo_url %>
+              <%= image_tag recipe.photo_url, class: 'img-fluid mx-auto d-block' %>
             <% end %>
         </p>
         <div class="bottom-boarder"></div>
