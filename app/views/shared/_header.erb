@@ -9,16 +9,15 @@
 
     <div class="right_header">
       <li class="nav-item dropdown dropdown-slider dropdown-center">
-            <%= link_to image_tag(current_user.avatar.url, class:'rounded-circle', size:'80x80'), "#", class:'nav-link', 'data-bs-toggle'=>'dropdown', 'aria-haspopup'=>'true', 'aria-expanded'=>'false' %>
-            <div class='dropdown-menu dropdown-menu-end'>
-              <span class="dropdown-item disabled" style="color: #000000;"><%= "#{current_user.name}さん" %></span>
-              <%= link_to 'プロフィール', profile_path, class:"dropdown-item" %>
-              <div class='dropdown-divider'></div>
-              <%= link_to 'ログアウト', logout_path, class:"dropdown-item", data: { turbo_method: :delete }  %>
-            </div>
+        <%= link_to image_tag(current_user.avatar.url, class:'rounded-circle', size:'100x100'), "#", class:'nav-link', 'data-bs-toggle'=>'dropdown', 'aria-haspopup'=>'true', 'aria-expanded'=>'false' %>
+        <div class='dropdown-menu dropdown-menu-end'>
+          <span class="dropdown-item disabled" style="color: #000000;"><%= "#{current_user.name}さん" %></span>
+          <%= link_to 'プロフィール', profile_path, class:"dropdown-item" %>
+          <div class='dropdown-divider'></div>
+          <%= link_to 'ログアウト', logout_path, class:"dropdown-item", data: { turbo_method: :delete }  %>
+        </div>
       </li>
-    </div>
-    
+    </div>    
   </div>
   <div class="middle_information">
     <%= link_to recipes_path, class: 'brown-script' do %>
