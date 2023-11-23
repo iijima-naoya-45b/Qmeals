@@ -130,9 +130,10 @@ Github: https://github.com/kucyaman/team_project
 | デザイン       |Figma           |
 | インフラ         |render AWS-S3 |
 
-## ◼︎ER図・インフラ構成図
-・画面遷移図
+## 画面遷移図
 https://www.figma.com/file/TQS7LWbK0NfAG8z4oiTpoJ/MVP%E3%80%90%E7%94%BB%E9%9D%A2%E8%A8%AD%E8%A8%88%E5%9B%B3%E3%80%91?type=design&node-id=0-1&mode=design&t=IYLgSD2NiqYko7xC-0
+
+## インフラ構成図
 
 ## ◼︎ER図
 【左側】
