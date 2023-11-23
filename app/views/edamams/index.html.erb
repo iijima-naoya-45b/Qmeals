@@ -15,19 +15,20 @@
     <% @foods["hits"].first(12).each_slice(3) do |recipes| %>
       <div class="row mb-3">
         <% recipes.each do |recipe| %>
-          <div class='mb-3 col-md-4'>
-            <div class="card" style="width:500px; background-color: #FFEEC1;">
-              <div class="card-body">
-                <h4 class="card-title" style='color: #6B493D'><%= translate_to_japanese(recipe["recipe"]["label"]) %></h4>
-                <%= image_tag recipe["recipe"]["image"], class: "card-img-bottom", alt: "Card image", style: "width:100%;" %>
-                <div class="text-end mt-3">
-                  <%= link_to '海外公式サイトへ', recipe["recipe"]["url"], class: "btn btn-warning", style: "color: #6B493D" %>
-                </div>
+        <div class='col-md-4'>
+          <div class="card" style="background-color: #FFEEC1">
+            <div class="card-body text-center">
+              <h4 class="card-title" style='color: #6B493D; font-size: 16px;'><%= translate_to_japanese(recipe["recipe"]["label"]) %></h4>
+              <%= image_tag recipe["recipe"]["image"], class: "card-img-bottom mx-auto", alt: "Card image", style: "width:70%; height: 70%; object-fit: contain;" %>
+              <div class="text-center mt-3">
+                <%= link_to '海外公式サイトへ', recipe["recipe"]["url"], class: "btn btn-warning", style: "color: #6B493D; font-size: 14px;" %>
               </div>
             </div>
           </div>
-        <% end %>
+        </div>
+      <% end %>
       </div>
     <% end %>
   </div>
 <% end %>
+
