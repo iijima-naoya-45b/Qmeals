@@ -19,12 +19,12 @@ services:
       - "3000:3000"
     depends_on:
       - db
-    stdin_open: true # yarnコマンドの実行のために追加
-    tty: true # yarnコマンドの実行のために追加
+    stdin_open: true
+    tty: true
     environment:
       SELENIUM_DRIVER_URL: http://chrome:4444/wd/hub
-      RAILS_ENV: development # Railsの環境を指定
-      NODE_ENV: development # Node.jsの環境を指定
+      RAILS_ENV: development
+      NODE_ENV: development
   chrome:
     image: seleniarm/standalone-chromium:latest
     shm_size: 256m
