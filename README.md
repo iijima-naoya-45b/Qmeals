@@ -61,11 +61,13 @@ ex).「野菜を腐りづらくする秘訣」「お肉は常温で解凍して�
 | --- | --- |
 | [![お気に入り機能](https://i.gyazo.com/91e106ce34876e8b85bd71c2eef41407.gif)](https://gyazo.com/91e106ce34876e8b85bd71c2eef41407) | [![料理の知恵袋のお気に入り機能](https://i.gyazo.com/a811c80433836ceb118cf28a864c04a9.gif)](https://gyazo.com/a811c80433836ceb118cf28a864c04a9)
 | レシピのコメント機能 | 料理の知恵袋のコメント機能 |
-[![Image from Gyazo](https://i.gyazo.com/4e1642f9a3865988a543abecda3ae4ad.gif)](https://gyazo.com/4e1642f9a3865988a543abecda3ae4ad)
-|[![料理の知恵袋の投稿機能](https://i.gyazo.com/b3fdf1553503fbad712d3e574d1c6855.gif)](https://gyazo.com/b3fdf1553503fbad712d3e574d1c6855)
-| レシピの投稿機能 | 海外のレシピ検索機能 (EdamamsAPIよりレシピ取得) |
+[![レシピのコメント機能](https://i.gyazo.com/4e1642f9a3865988a543abecda3ae4ad.gif)](https://gyazo.com/4e1642f9a3865988a543abecda3ae4ad)|[![料理の知恵袋の投稿機能](https://i.gyazo.com/b3fdf1553503fbad712d3e574d1c6855.gif)](https://gyazo.com/b3fdf1553503fbad712d3e574d1c6855)
+| レシピの投稿機能 | 海外のレシピ検索機能① |
 [![Image from Gyazo](https://i.gyazo.com/46fd543ef883857ab69474ed390d06d3.gif)](https://gyazo.com/46fd543ef883857ab69474ed390d06d3)| [![レシピ検索機能](https://i.gyazo.com/f1f3becda4d423b39d51ebd96a24b973.gif)](https://gyazo.com/f1f3becda4d423b39d51ebd96a24b973) |
-
+| 海外のレシピ検索機能② | 海外のレシピ検索機能③ |
+[![海外のレシピ検索機能②](https://i.gyazo.com/f84877a777960c3707d5cfe91ea37e07.gif)](https://gyazo.com/f84877a777960c3707d5cfe91ea37e07)[![海外のレシピ検索機能③](https://i.gyazo.com/0392a2078a4a7fd86ab934082ca9fbb4.gif)](https://gyazo.com/0392a2078a4a7fd86ab934082ca9fbb4)
+| お買い物リストに登録 |　レシピからお買い物リストに登録 |
+[![お買い物リストに登録](https://i.gyazo.com/595d236d79c447fd0ec0020229aa3e1c.gif)](https://gyazo.com/595d236d79c447fd0ec0020229aa3e1c)|[![レシピからお買い物リストに登録](https://i.gyazo.com/c1815d9ba20b5bb400c9ee2e28c3afbe.gif)](https://gyazo.com/c1815d9ba20b5bb400c9ee2e28c3afbe)
 
 ## ◼︎こだわりポイント
 今回こだわった点は、UIです。
