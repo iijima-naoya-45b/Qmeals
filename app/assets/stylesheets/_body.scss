@@ -18,6 +18,12 @@
         align-items: center;
     }
 
+    .before-right-header {
+        display: flex;
+        align-items: center;
+        flex-direction: column; 
+    }
+
     .middle_information {
         width: 100%;
         display: flex;
@@ -40,9 +46,8 @@
         height: auto;
     }
 
-    .topics > div {
+    .topics .bottom-space {
         width: 100%;
-        margin-bottom: 15px;
     }
 }
 
