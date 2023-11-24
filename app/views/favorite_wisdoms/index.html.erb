@@ -1,5 +1,7 @@
 <div class="container">
-  <h3><div class="text-center">料理の知恵のお気に入り</div></h3>
+  <h3>
+    <div class="text-center">料理の知恵のお気に入り</div>
+  </h3>
   <%= render 'shared/favorites' %>
   <div class="sub-back-ground">
     <% if @favorite_wisdoms.present? %>
@@ -24,10 +26,10 @@
       <% end %>
     <% else %>
       <div class="flex text-center">
-      <p>お気に入りを登録すると、ここに表示されます!!</p>
-      <p>お気に入りの使用方法はこちら</p>
-      <p><%= render 'shared/how_to_favorite' %></p>
+        <p>お気に入りを登録すると、ここに表示されます!!</p>
+        <p>お気に入りの使用方法はこちら</p>
+        <p><%= render 'shared/how_to_favorite' %></p>
+      </div>
     <% end %>
   </div>
-</div>
 </div>
