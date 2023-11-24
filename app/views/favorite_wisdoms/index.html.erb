@@ -2,24 +2,32 @@
   <h3><div class="text-center">料理の知恵のお気に入り</div></h3>
   <%= render 'shared/favorites' %>
   <div class="sub-back-ground">
-    <% @favorite_wisdoms.each do |wisdom_board| %>
-      <div class="favorite-wisdom-board">
-        <div style="display: flex; align-items: center;">
-          <%= render 'wisdom_unfavorite', {wisdom_board: wisdom_board} %>
-          <h3 class="ml-3"><%= link_to wisdom_board.title, wisdom_board_path(wisdom_board), class: 'brown-script' %></h3>
-        </div>
-        <% wisdom_board.wisdom_tags.each do |tag| %>
-          <span class="btn-brown-script"><%= tag.name %></span>
-        <% end %>
-        <p class="mt-3">
-          <%= link_to wisdom_board_path(wisdom_board) do %>
-          <div class="image-box d-flex justify-content-center align-items-center">
-            <%= image_tag wisdom_board.photo_url, class: 'img-fluid' %>
+    <% if @favorite_wisdoms.present? %>
+      <% @favorite_wisdoms.each do |wisdom_board| %>
+        <div class="favorite-wisdom-board">
+          <div style="display: flex; align-items: center;">
+            <%= render 'wisdom_unfavorite', {wisdom_board: wisdom_board} %>
+            <h3 class="ml-3"><%= link_to wisdom_board.title, wisdom_board_path(wisdom_board), class: 'brown-script' %></h3>
           </div>
-        <% end %>
-        </p>
-        <div class="bottom-boarder"></div>
-      </div>
+          <% wisdom_board.wisdom_tags.each do |tag| %>
+            <span class="btn-brown-script"><%= tag.name %></span>
+          <% end %>
+          <p class="mt-3">
+            <%= link_to wisdom_board_path(wisdom_board) do %>
+              <div class="image-box d-flex justify-content-center align-items-center">
+                <%= image_tag wisdom_board.photo_url, class: 'img-fluid' %>
+              </div>
+            <% end %>
+          </p>
+          <div class="bottom-boarder"></div>
+        </div>
+      <% end %>
+    <% else %>
+      <div class="flex text-center">
+      <p>お気に入りを登録すると、ここに表示されます!!</p>
+      <p>お気に入りの使用方法はこちら</p>
+      <p><%= render 'shared/how_to_favorite' %></p>
     <% end %>
   </div>
+</div>
 </div>

@@ -28,12 +28,12 @@
 
   <div class="wisdom-main sub-back-ground">
     <% @wisdom_board.wisdom_photos.each_with_index do |photo, index| %>
-      <p><%= "#{index + 1}. #{photo.description}" %></p>
+      <p class="break-all"><%= "#{index + 1}. #{photo.description}" %></p>
     <% end %>
   </div>
 
   <%= render 'wisdom_comments/form', wisdom_comment: @comment, wisdom_board: @wisdom_board %>
-  <p class="wisdom_board-author"><%= "投稿者:#{@wisdom_board.user.name}さん" %></p>
+  <p class="wisdom_board-author"><%= "投稿aiueo者:#{@wisdom_board.user.name}さん" %></p>
   <div id="table-wisdom-comment">
     <%= render @comments %>
   </div>

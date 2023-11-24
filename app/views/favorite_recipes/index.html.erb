@@ -2,6 +2,7 @@
   <h3><div class="text-center">レシピのお気に入り</div></h3>
   <%= render 'shared/favorites' %>
   <div class="sub-back-ground">
+  <% if @favorite_recipes.present? %>
     <% @favorite_recipes.each do |recipe| %>
       <div class="favorite-recipe">
         <div style="display: flex; align-items: center;">
@@ -14,12 +15,19 @@
           </span>
         <% end %>
         <p style="margin-top: 10px;">
-            <%= link_to recipe_path(recipe) do %>
-              <%= image_tag recipe.photo_url, class: 'img-fluid mx-auto d-block' %>
-            <% end %>
+          <%= link_to recipe_path(recipe) do %>
+            <%= image_tag recipe.photo_url, class: 'img-fluid mx-auto d-block' %>
+          <% end %>
         </p>
         <div class="bottom-boarder"></div>
       </div>
-    <% end %>
+      <% end %>
+  <% else %>
+    <div class='flex text-center'>
+      <p>お気に入りを登録すると、ここに表示されます!!</p>
+      <p>お気に入りの使用方法はこちら</p>
+      <p><%= render 'shared/how_to_favorite' %></p>
+    </div>
+  <% end %>
   </div>
 </div>

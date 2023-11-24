@@ -1,0 +1,20 @@
+<%= link_to '#', data: { bs_toggle: "modal", bs_target: "#how_to_favorite" }, class: "text-decoration-none text-reset" do %>
+  <h6 class="mt-2 mb-4">
+    <%= image_tag 'question.svg' %>
+  </h6>
+<% end %>
+
+<div class="modal fade" id="how_to_favorite" tabindex="-1" aria-labelledby="howToFavoriteLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="howToFavoriteLabel">お気に入り機能</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p>お気に入り機能</p>
+        <%= image_tag 'how_to_favorite.png' %>
+      </div>
+    </div>
+  </div>
+</div>
