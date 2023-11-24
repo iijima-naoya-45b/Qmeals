@@ -134,6 +134,7 @@ Github: https://github.com/kucyaman/team_project
 https://www.figma.com/file/TQS7LWbK0NfAG8z4oiTpoJ/MVP%E3%80%90%E7%94%BB%E9%9D%A2%E8%A8%AD%E8%A8%88%E5%9B%B3%E3%80%91?type=design&node-id=0-1&mode=design&t=IYLgSD2NiqYko7xC-0
 
 ## インフラ構成図
+[![インフラ構成図](https://i.gyazo.com/53b3eda9563c47ebfc2b5e798eb310ec.png)](https://gyazo.com/53b3eda9563c47ebfc2b5e798eb310ec)
 
 ## ◼︎ER図
 【左側】
