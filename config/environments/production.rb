@@ -105,6 +105,6 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-  config.hosts << 'qmeals-app.com'
+  config.hosts << 'www.qmeals-app.com'
 end
 
