@@ -1,7 +1,7 @@
 # 時短レシピアプリ「Qmeals」の概要
 
 ## サービスURL
-https://qmeals-app.onrender.com/
+[https://qmeals-app.onrender.com/](https://www.qmeals-app.com/)
 
 ## ◼︎サービスの概要
 「時短」「手軽」をモットーとしたレシピアプリです。<br>
