@@ -2,6 +2,7 @@
 
 ## サービスURL
 [https://qmeals-app.com/](https://www.qmeals-app.com/)
+※本アプリはサービスを終了しました。
 
 ## ◼︎サービスの概要
 「時短」「手軽」をモットーとしたレシピアプリです。<br>
